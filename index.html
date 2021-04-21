@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Off World Live Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap');
+
+    :root {
+      --mono-hue: 250;
+      --mono-saturation: 1%;
+      --theme-color: #eab6f3;
+      --mono-base: #111517;
+      --base-font-family: Montserrat;
+      --base-font-weight: 400;
+      --base-font-size: 15px;
+      --sidebar-width: 25rem;
+      --sidebar-background: #0f1a21;
+    }
+    @media screen and (max-width: 600px) {
+      nav.app-nav {
+        position: relative;
+        right: auto !important;
+        left: auto !important;
+        padding: 20px;
+        z-index: 0;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Off World Live',
+      repo: '',
+      logo: './assets/off_world_live_logo.png',
+      subMaxLevel: 3,
+      auto2top: true,
+      relativePath: true,
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+</body>
+</html>
