@@ -13,7 +13,6 @@ The plugin is compatible with all major Unreal creative tools including (but not
 
 For any support/ further questions, [please get in touch on our discord channel.](https://discord.gg/2PaMtnK)
 
-
 ## Installation 
 
 ### Unreal SPOUT Plugin Installation
@@ -45,7 +44,7 @@ In order to stream the output from Unreal Engine to the Internet:
 
 
 
-1. Install OBS Studio [https://obsproject.com/download](https://obsproject.com/download)
+1. [Install OBS Studio](https://obsproject.com/download)
 2. Install our ‘Spout2 Source Plugin for OBS Studio (64bit)’: [https://github.com/Off-World-Live/obs-spout2-source-plugin/releases](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) and [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
 ## SPOUT Sender Manager
@@ -310,7 +309,7 @@ The OWL Cinecam uses the viewport rendering pipeline from Unreal and so can take
 ![alt_text](images/image15.png "image_tooltip")
 
 
-## Alpha Channel Output
+### Alpha Channel Output
 
 
 You can select specific Actors to show/ hide (but only Actors, not Components or Instance Meshes) using the ‘Hidden Actors’ and ‘Show Only Actors’ arrays as follows:
@@ -334,16 +333,8 @@ You can select specific Actors to show/ hide (but only Actors, not Components or
     2. In its ‘Details Panel’ go to ‘Rendering Features’/ ‘Post Process Materials’/ ‘Array’. 
     3. Add a new array element and select ‘Asset reference’ from the drop down.
     4. Use the arrow next to the array element you have added to select ‘M_OwlAlpha’.
-
-
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image17.png "image_tooltip")
-
-
-
+    
+    ![alt_text](images/image17.png "image_tooltip")
 
     5.  (If this doesn’t appear in your list, go to ‘Content Browser’/  ‘View Options’/ ‘Show Plugin Content’ and then repeat.
 
