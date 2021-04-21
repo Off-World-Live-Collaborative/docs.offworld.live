@@ -57,21 +57,21 @@ Adding the Plugin to your Unreal Project
 
 
 1. Ensure that all instances of your Unreal Project are closed.
-2. If you do not have any Plugins installed in your project then create a new ‘Plugins’ folder in your ‘Project’ folder and copy the unzipped plugin inside.
-3. If you already have Plugins in your project then copy the unzipped `OWL360LivestreamingCamera` folder into the existing ‘Plugins’ folder in your Project.
+2. If you do not have any Plugins installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
+3. If you already have Plugins in your project then copy the unzipped `OWL360LivestreamingCamera` folder into the existing `Plugins` folder in your Project.
 4. When installed correctly, the folder structure should read [Myproject]/Plugins/OWL360LivestreamingCamera]
 
 #### Downloading OBS (for streaming the 360 output from Unreal Engine to the internet)
 
 
 1. Install OBS Studio [https://obsproject.com/download](https://obsproject.com/download)
-2. Install our ‘Spout2 Source Plugin for OBS Studio (64bit)’ [https://github.com/Off-World-Live/obs-spout2-source-plugin](https://github.com/Off-World-Live/obs-spout2-source-plugin)
+2. Install our `Spout2 Source Plugin for OBS Studio (64bit)` [https://github.com/Off-World-Live/obs-spout2-source-plugin](https://github.com/Off-World-Live/obs-spout2-source-plugin)
 
 
 ## Opening in Unreal
 
 
-1. Open your Unreal Engine Project and, in the ‘Place Actors/ Modes’ window, search for `OWL360Livestreaming Cam Pawn`
+1. Open your Unreal Engine Project and, in the `Place Actors/ Modes` window, search for `OWL360Livestreaming Cam Pawn`
 
 
 
@@ -84,7 +84,7 @@ Adding the Plugin to your Unreal Project
 
 
 2. Select this item and drop it into your Unreal viewport. **N.B. You can only place one 360 camera in your level at any given time but you can teleport the camera using blueprints (ask us on discord if you need assistance).** Now: 
-3. In the ‘World Editor’ window you can click on `OffWorldLive360Camera` as an ‘Actor’ and change its settings in the ‘Details’ panel.
+3. In the `World Editor` window you can click on `OffWorldLive360Camera` as an `Actor` and change its settings in the `Details` panel.
 
 
 
@@ -125,7 +125,7 @@ Adding the Plugin to your Unreal Project
 
 
 4. Now select your own GameMode in World Settings (as explained in Point 1).
-5. The camera is now active in the level and you need to authenticate your account to use it to output video. When you click ‘Play’ in the Editor view, you will be requested to login to the Off World Live console (internet access required). 
+5. The camera is now active in the level and you need to authenticate your account to use it to output video. When you click `Play` in the Editor view, you will be requested to login to the Off World Live console (internet access required). 
 
 
 
@@ -206,7 +206,7 @@ You can set the camera name as you would like it to appear as a source in output
 
 
 *   By default, the camera moves using the direction of the pawn as it is orientated in the level (not the direction of the viewport). 
-*   If you are controlling the camera live, check ‘View direction is forward’ so the camera moves where you are looking towards in the viewport.
+*   If you are controlling the camera live, check `View direction is forward` so the camera moves where you are looking towards in the viewport.
 
 ### `Camera Movement`
 
@@ -326,7 +326,7 @@ The camera can be used to output to any SPOUT receiver and converts DX12 texture
 
 *   To test with SPOUT you can [download the SPOUT receiver here](https://leadedge.github.io/spout-download.html).
 *   You need to ensure that the GPU running the SPOUT receiver program is the same as the GPU running Unreal Engine.
-*   To do so, click the ‘Spout Receiver’ programme included in the SPOUT download folder and select the correct GPU from the drop down menu.
+*   To do so, click the `Spout Receiver` programme included in the SPOUT download folder and select the correct GPU from the drop down menu.
 
 
 
@@ -348,11 +348,11 @@ At present 360 video can be live-streamed to Facebook and YouTube live and certa
 
 
 
-1. In OBS click ‘Settings’ in the bottom right hand corner and in the ‘Settings’ window click ‘Stream’.
-2. In the ‘Stream’ section, select from the ‘Service’ dropdown menu where you would like to stream to.
-3. Follow the instructions of your selected streaming platform (including acquiring a stream key) and paste the stream key into the ‘Stream Key’ box.
-4.  Click ‘Apply’ to close the ‘Settings’ window and return to the main OBS window.
-5. When you are ready to stream from OBS select ‘Start Streaming’ in the bottom right hand corner.
+1. In OBS click `Settings` in the bottom right hand corner and in the `Settings` window click `Stream`.
+2. In the `Stream` section, select from the `Service` dropdown menu where you would like to stream to.
+3. Follow the instructions of your selected streaming platform (including acquiring a stream key) and paste the stream key into the `Stream Key` box.
+4.  Click `Apply` to close the `Settings` window and return to the main OBS window.
+5. When you are ready to stream from OBS select `Start Streaming` in the bottom right hand corner.
 
 Setting recommendations for streaming 4K to YouTube:
 

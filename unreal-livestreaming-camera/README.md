@@ -11,7 +11,7 @@ It can also be used to output video to any programme using a SPOUT receiver (Res
 
 The plugin is compatible with DX11 and DX12 APIs and so can be used for streaming ray-traced scenes.
 
-[Video tutorials for using the camera’s various special features can be found here](https://www.youtube.com/playlist?list=PLElT6SIg9JnBal5zWDEAVo_l-5TaEhD2J)
+[Video tutorials for using the camera`s various special features can be found here](https://www.youtube.com/playlist?list=PLElT6SIg9JnBal5zWDEAVo_l-5TaEhD2J)
 
 
 ## Installation
@@ -21,13 +21,13 @@ The plugin is compatible with DX11 and DX12 APIs and so can be used for streamin
 
 
 1. If via a file download link download and unzip the downloaded plugin.
-2. If via the Unreal marketplace, select the project for the plugin and it will automatically appear in your ‘Plugins’ folder.
+2. If via the Unreal marketplace, select the project for the plugin and it will automatically appear in your `Plugins` folder.
 
 ### Adding the Plugin to your Unreal Project
 
 1. Ensure that all instances of your Unreal Project are closed.
-2. If you do not have any Plugins installed in your project then create a new ‘Plugins’ folder in your ‘Project’ folder and copy the unzipped plugin inside.
-3. If you already have Plugins in your project then open the ‘Plugins’ folder to find the '**OWL_LivestreamingCamera`folder and copy it into the existing ‘Plugins’ folder in your Project.
+2. If you do not have any Plugins installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
+3. If you already have Plugins in your project then open the `Plugins` folder to find the '**OWL_LivestreamingCamera`folder and copy it into the existing `Plugins` folder in your Project.
 
 
 
@@ -44,12 +44,12 @@ The plugin is compatible with DX11 and DX12 APIs and so can be used for streamin
 ### Downloading OBS (for streaming the output from Unreal Engine)
 
 1. Install OBS Studio [https://obsproject.com/download](https://obsproject.com/download)
-2. Install our ‘Spout2 Source Plugin for OBS Studio (64bit)’: [https://github.com/Off-World-Live/obs-spout2-source-plugin/releases](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases)
+2. Install our `Spout2 Source Plugin for OBS Studio (64bit)`: [https://github.com/Off-World-Live/obs-spout2-source-plugin/releases](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases)
 
 
 ## Using the Virtual Camera in Unreal
 
-1. Open your Unreal Engine Project and, in the ‘Place Actors/ Modes’ window, search for `OWLLivestreamingCamera`
+1. Open your Unreal Engine Project and, in the `Place Actors/ Modes` window, search for `OWLLivestreamingCamera`
 2. Select this item and drop it into your Unreal viewport.
 
 
@@ -144,7 +144,7 @@ Automatic available streaming resolutions are:
 N.B. You can only select _Actors _to appear in the alpha channel. This method does not work with _Components _or _Instance Meshes_.
 
 
-1. In ‘Project Settings’ in your Editor, find ‘Enable alpha channel support’ in ‘Engine - Rendering/ Postprocessing’ and set it to ‘AllowThroughTonemapper’.
+1. In `Project Settings` in your Editor, find `Enable alpha channel support` in `Engine - Rendering/ Postprocessing` and set it to `AllowThroughTonemapper`.
 
 
 
@@ -156,10 +156,10 @@ N.B. You can only select _Actors _to appear in the alpha channel. This method do
 
 
 
-2. Select your OWL LivestreamingCamera in World Outliner and in it’s Details panel find the section called ‘Scene Capture’ and:
-    1. Set ‘Consider Unrendered Opaque Pixel as Fully Translucent’ to ‘True’
-    2. Set ‘Primitive Render Mode’ to ‘Use ShowOnly List’
-    3. Go to the ‘Show Only Actors’ list and create an array element for each actor you want to send in your alpha channel (you can select these either from the drop down list or using the picker in your viewport).
+2. Select your OWL LivestreamingCamera in World Outliner and in it`s Details panel find the section called `Scene Capture` and:
+    1. Set `Consider Unrendered Opaque Pixel as Fully Translucent` to `True`
+    2. Set `Primitive Render Mode` to `Use ShowOnly List`
+    3. Go to the `Show Only Actors` list and create an array element for each actor you want to send in your alpha channel (you can select these either from the drop down list or using the picker in your viewport).
 
 
 
@@ -171,11 +171,11 @@ N.B. You can only select _Actors _to appear in the alpha channel. This method do
 
 
 
-3. If you don’t have a ‘Post Process Volume’ in your scene then [follow these instructions](https://subscription.packtpub.com/book/game_development/9781784391966/4/ch04lvl1sec24/adding-post-process) to add one. Then:
-    4. Select your ‘Post Process Volume’ in ‘World Outliner’.
-    5. In its ‘Details Panel’ go to ‘Rendering Features’/ ‘Post Process Materials’/ ‘Array’. 
-    6. Add a new array element and select ‘Asset reference’ from the drop down.
-    7. Use the arrow next to the array element you have added to select ‘M_OwlAlpha’.
+3. If you don`t have a `Post Process Volume` in your scene then [follow these instructions](https://subscription.packtpub.com/book/game_development/9781784391966/4/ch04lvl1sec24/adding-post-process) to add one. Then:
+    4. Select your `Post Process Volume` in `World Outliner`.
+    5. In its `Details Panel` go to `Rendering Features`/ `Post Process Materials`/ `Array`. 
+    6. Add a new array element and select `Asset reference` from the drop down.
+    7. Use the arrow next to the array element you have added to select `M_OwlAlpha`.
 
 
 
@@ -187,7 +187,7 @@ N.B. You can only select _Actors _to appear in the alpha channel. This method do
 
 
 
-    8.  (If this doesn’t appear in your list, go to ‘Content Browser’/  ‘View Options’/ ‘Show Plugin Content’ and then repeat.
+    8.  (If this doesn`t appear in your list, go to `Content Browser`/  `View Options`/ `Show Plugin Content` and then repeat.
 4. In 
 
 <p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -196,8 +196,8 @@ N.B. You can only select _Actors _to appear in the alpha channel. This method do
 ![alt_text](images/image11.png "image_tooltip")
 OBS (or your SPOUT receiver programme) (for a guide on how to stream to OBS more generally please see below):
     9. Click on your SPOUT2 Source.
-    10. In the pop-up window for ‘Composite Mode’ select ‘Premultiplied Alpha’.
-    11. You should now see the ‘Actors’ you have selected in Unreal as an alpha channel in OBS/ your SPOUT receiver programme.
+    10. In the pop-up window for `Composite Mode` select `Premultiplied Alpha`.
+    11. You should now see the `Actors` you have selected in Unreal as an alpha channel in OBS/ your SPOUT receiver programme.
 
 
 
@@ -216,7 +216,7 @@ Adding the SPOUT receiver to your scene:
 
 
 
-1. Open your Unreal Engine Project and, in the ‘Place Actors/ Modes’ window, search for ‘OWLSpout Receiver’.
+1. Open your Unreal Engine Project and, in the `Place Actors/ Modes` window, search for `OWLSpout Receiver`.
 2. Drag and drop a new receiver into your scene for each SPOUT input you need (you can add multiple into a single scene).
 
 
@@ -248,8 +248,8 @@ Connect your SPOUT input to your Render Target:
 
 1. Select your SPOUT Receiver in World Outliner.
 2. In the Details panel for your SPOUT Receiver go to Off World Live SPOUT Receiver Settings and:
-    1. Click ‘Receiver Active’ to ‘True’
-    2. Select your Render Target from the drop-down list ‘Render Target’
+    1. Click `Receiver Active` to `True`
+    2. Select your Render Target from the drop-down list `Render Target`
     3. Input the exact name of your SPOUT sender (as it is called in your external SPOUT sender programme) into the Receiver Name field.
 
 
@@ -264,7 +264,7 @@ Create a material from your Render Texture and add it elements in your level:
 
 
 
-1. Right click on your SPOUT Render Target in Content Browser (which you previously created above) and choose ‘Create Material’.
+1. Right click on your SPOUT Render Target in Content Browser (which you previously created above) and choose `Create Material`.
 
 
 
@@ -311,7 +311,7 @@ The camera can be used to output to any SPOUT receiver and converts DX12 texture
 
 *   To test with SPOUT you can [download the SPOUT receiver here](https://leadedge.github.io/spout-download.html).
 *   You need to ensure that the GPU running the SPOUT receiver program is the same as the GPU running Unreal Engine.
-*   To do so, click the ‘Spout Receiver’ programme included in the SPOUT download folder and select the correct GPU from the drop down menu.
+*   To do so, click the `Spout Receiver` programme included in the SPOUT download folder and select the correct GPU from the drop down menu.
 *   You also need to ensure that whatever programmes you are sharing the video texture with are also running on the same GPU. [You can use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.).
 
 

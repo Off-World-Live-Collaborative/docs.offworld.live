@@ -25,8 +25,8 @@ For any support/ further questions, [please get in touch on our discord channel.
 
 
 1. Ensure that all instances of your Unreal Project are closed.
-2. If you do not have any Plugins installed in your project then create a new ‘Plugins’ folder in your ‘Project’ folder and copy the unzipped plugin inside.
-3. If you already have Plugins in your project then open the ‘Plugins’ folder to find the `OWLLivestreamingCamera` folder and copy it into the existing ‘Plugins’ folder in your Project.
+2. If you do not have any Plugins installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
+3. If you already have Plugins in your project then open the `Plugins` folder to find the `OWLLivestreamingCamera` folder and copy it into the existing `Plugins` folder in your Project.
 
 
 
@@ -45,7 +45,7 @@ In order to stream the output from Unreal Engine to the Internet:
 
 
 1. [Install OBS Studio](https://obsproject.com/download)
-2. Install our ‘Spout2 Source Plugin for OBS Studio (64bit)’: [https://github.com/Off-World-Live/obs-spout2-source-plugin/releases](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) and [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
+2. Install our `Spout2 Source Plugin for OBS Studio (64bit)`: [https://github.com/Off-World-Live/obs-spout2-source-plugin/releases](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) and [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
 ## SPOUT Sender Manager
 
@@ -57,12 +57,12 @@ The SPOUT sender manager works both in-Editor and at Runtime and can be used wit
   
 
 1. In the Spout Sender Manager actor added above:
-    1. Select OWLSpoutSenderManager in ‘World Outliner’
-    2. In your Details panel add a Spout Sender ‘Array Element’ and click the arrow in the right hand corner to open the Array Element showing its components/ members.
+    1. Select OWLSpoutSenderManager in `World Outliner`
+    2. In your Details panel add a Spout Sender `Array Element` and click the arrow in the right hand corner to open the Array Element showing its components/ members.
         ![CineCamCapture](./images/CineCamCapture.jpg)
     3. Name your Sender and Standalone Sender (for standalone mode) as you need.
     4. Select your Render Target from the list using the drop-down in the same method used as for selecting the Render Target for your Cinecam above.
-    5. Click the ‘Active’ box on to begin sending to SPOUT.
+    5. Click the `Active` box on to begin sending to SPOUT.
 
 
 
@@ -74,7 +74,7 @@ The SPOUT sender manager works both in-Editor and at Runtime and can be used wit
 
 
 
-2. To stream multiple cameras, just repeat the steps above and if you need to reduce computational load/ increase frame rate, use the ‘Active’ tick-box to manage which cameras are rendering simultaneously.
+2. To stream multiple cameras, just repeat the steps above and if you need to reduce computational load/ increase frame rate, use the `Active` tick-box to manage which cameras are rendering simultaneously.
 3. The SPOUT sender can also be used to [live-stream a Render Target direct from Composure.](https://docs.unrealengine.com/en-US/WorkingWithMedia/Composure/QuickStart/index.html)
 
 ## SPOUT Receiver Manager
@@ -85,7 +85,7 @@ The OWL SPOUT Receiver Manager allows you to add multiple simultaneous SPOUT inp
 
 
 1. Add the OWL SPOUT Receiver Manager to your scene
-    1. In the ‘Place Actors’ window, search for ‘OWLSpout Receiver Manager’ and drag and drop it into your level.  
+    1. In the `Place Actors` window, search for `OWLSpout Receiver Manager` and drag and drop it into your level.  
 
 
 
@@ -98,7 +98,7 @@ The OWL SPOUT Receiver Manager allows you to add multiple simultaneous SPOUT inp
 
 
 2. For each each SPOUT input you need, create a Render Texture Target by:
-    2. In ‘Content Browser’ add a new ‘Render Target’ by selecting: Add/Import-> Materials & Textures -> Render Target.
+    2. In `Content Browser` add a new `Render Target` by selecting: Add/Import-> Materials & Textures -> Render Target.
     3. Give your Render Target a name so you can identify it later.
 
 
@@ -131,7 +131,7 @@ The OWL SPOUT Receiver Manager allows you to add multiple simultaneous SPOUT inp
         3. Render Target should select the Render Texture Target you added in step 2 which will display your SPOUT input.
     7. Provided the name you input in ii. is the same as in your external programme, you should automatically see your SPOUT input in the Render Target thumbnail. 
 4. Create a material from your Render Texture and add it to elements in your level:
-    8. Right click on your SPOUT Render Target in Content Browser (which you created in step 2) and choose ‘Create Material’.
+    8. Right click on your SPOUT Render Target in Content Browser (which you created in step 2) and choose `Create Material`.
 
 
 
@@ -163,13 +163,13 @@ The Cinecam requires two Unreal actors to work:
 
 
 1. The OWL Cine Cam Capture
-1. Open your Unreal Engine Project and, in the ‘Place Actors/ Modes’ window, search for `OWLCine Cam Capture`
+1. Open your Unreal Engine Project and, in the `Place Actors/ Modes` window, search for `OWLCine Cam Capture`
 2. Select this item and drop it into your Unreal viewport.
-3. Repeat this for the ‘OWL Spout Sender Manager
+3. Repeat this for the `OWL Spout Sender Manager
 
 ### Cinecam Render Target
 
-1. You need to assign a Render Target to your Cinecam. You can do this by selecting it in the ‘World Outliner’ list and then in the ‘Details’ panel clicking the drop-down next to ‘Texture Target’ and selecting ‘Create New Asset’ -> ‘Render Target’.
+1. You need to assign a Render Target to your Cinecam. You can do this by selecting it in the `World Outliner` list and then in the `Details` panel clicking the drop-down next to `Texture Target` and selecting `Create New Asset` -> `Render Target`.
 
 
 
@@ -191,7 +191,7 @@ The Cinecam requires two Unreal actors to work:
 ![alt_text](images/image11.png "image_tooltip")
 
 
-3. Your Render Target will be saved in your ‘Content Browser’ and you can create multiple Render Targets if you like and attach them to your Cinecam using the drop-down list of Render Targets shown above.
+3. Your Render Target will be saved in your `Content Browser` and you can create multiple Render Targets if you like and attach them to your Cinecam using the drop-down list of Render Targets shown above.
 
 
 
@@ -235,9 +235,9 @@ Resolution/ Aspect Ratio:
 
 
 
-*   The aspect ratio of the camera can be set using the ‘Filmback’ dropdown lower in the details panel.
-*   The aspect ratio automatically changes the ‘Resolution’ configuration at the top of the details panel if the ‘Constrain Aspect Ratio’ tickbox is selected in the ‘Camera Options’ section. If unticked then you can create whatever aspect ratio you like.
-*   If the ‘Constrain Aspect Ratio’ tickbox is selected, only the Y value of the resolution can be changed and this will automatically adjust the X value.
+*   The aspect ratio of the camera can be set using the `Filmback` dropdown lower in the details panel.
+*   The aspect ratio automatically changes the `Resolution` configuration at the top of the details panel if the `Constrain Aspect Ratio` tickbox is selected in the `Camera Options` section. If unticked then you can create whatever aspect ratio you like.
+*   If the `Constrain Aspect Ratio` tickbox is selected, only the Y value of the resolution can be changed and this will automatically adjust the X value.
 
 Clear Color/ Render Target Gamma
 
@@ -250,7 +250,7 @@ Pause Rendering:
 
 
 *   This enables you to pause rendering on the camera which is useful for saving GPU power when using live-editing.
-*   This allows you to stream a static/ paused image if ‘Pause rendering’ is selected in the Cinecam details panel and ‘Active’ is selected in the SPOUT sender manager for that Cinecam.
+*   This allows you to stream a static/ paused image if `Pause rendering` is selected in the Cinecam details panel and `Active` is selected in the SPOUT sender manager for that Cinecam.
 
 Use Show Only List/ Show Only Actors:
 
@@ -285,7 +285,7 @@ Standard Cinecam Features:
 ### Depth of Field
 
 
-The OWL Cinecam includes all the of the Depth of Field capabilities from the Unreal Cinecam which are split across the ‘Current Camera Settings’ and ‘Post Process’ sections.
+The OWL Cinecam includes all the of the Depth of Field capabilities from the Unreal Cinecam which are split across the `Current Camera Settings` and `Post Process` sections.
 
 
 
@@ -312,11 +312,11 @@ The OWL Cinecam uses the viewport rendering pipeline from Unreal and so can take
 ### Alpha Channel Output
 
 
-You can select specific Actors to show/ hide (but only Actors, not Components or Instance Meshes) using the ‘Hidden Actors’ and ‘Show Only Actors’ arrays as follows:
+You can select specific Actors to show/ hide (but only Actors, not Components or Instance Meshes) using the `Hidden Actors` and `Show Only Actors` arrays as follows:
 
 
 
-1. In ‘Project Settings’ in your Editor, find ‘Enable alpha channel support’ in ‘Engine - Rendering/ Postprocessing’ and set it to ‘AllowThroughTonemapper’.
+1. In `Project Settings` in your Editor, find `Enable alpha channel support` in `Engine - Rendering/ Postprocessing` and set it to `AllowThroughTonemapper`.
 
 
 
@@ -328,15 +328,15 @@ You can select specific Actors to show/ hide (but only Actors, not Components or
 
 
 
-2. If you don’t have a ‘Post Process Volume’ in your scene then [follow these instructions](https://subscription.packtpub.com/book/game_development/9781784391966/4/ch04lvl1sec24/adding-post-process) to add one. Then:
-    1. Select your ‘Post Process Volume’ in ‘World Outliner’.
-    2. In its ‘Details Panel’ go to ‘Rendering Features’/ ‘Post Process Materials’/ ‘Array’. 
-    3. Add a new array element and select ‘Asset reference’ from the drop down.
-    4. Use the arrow next to the array element you have added to select ‘M_OwlAlpha’.
+2. If you don`t have a `Post Process Volume` in your scene then [follow these instructions](https://subscription.packtpub.com/book/game_development/9781784391966/4/ch04lvl1sec24/adding-post-process) to add one. Then:
+    1. Select your `Post Process Volume` in `World Outliner`.
+    2. In its `Details Panel` go to `Rendering Features`/ `Post Process Materials`/ `Array`. 
+    3. Add a new array element and select `Asset reference` from the drop down.
+    4. Use the arrow next to the array element you have added to select `M_OwlAlpha`.
     
     ![alt_text](images/image17.png "image_tooltip")
 
-    5.  (If this doesn’t appear in your list, go to ‘Content Browser’/  ‘View Options’/ ‘Show Plugin Content’ and then repeat.
+    5.  (If this doesn`t appear in your list, go to `Content Browser`/  `View Options`/ `Show Plugin Content` and then repeat.
 
 
 
@@ -349,9 +349,9 @@ You can select specific Actors to show/ hide (but only Actors, not Components or
 
 
 3. Click on the OWL Cinecam in the World Outliner and go to its Details panel.
-    6. Using the ‘Hidden Actors’ or ‘Show Only Actors’ arrays select the Actors that you would like to show/ hide.
+    6. Using the `Hidden Actors` or `Show Only Actors` arrays select the Actors that you would like to show/ hide.
     7. You can do this from the drop down list or using the picker to the left of the drop down list.
-    8. If you want to ‘Show Only Actors’ then you need to also tick the ‘Use Show Only List’ tick box.
+    8. If you want to `Show Only Actors` then you need to also tick the `Use Show Only List` tick box.
 
 
 
@@ -365,8 +365,8 @@ You can select specific Actors to show/ hide (but only Actors, not Components or
 
 4. In OBS (or your SPOUT receiver programme):
     9. Click on your SPOUT2 Source.
-    10. In the pop-up window for ‘Composite Mode’ select ‘Premultiplied Alpha’.
-    11. You should now see the ‘Actors’ you have selected in Unreal as an alpha channel in OBS/ your SPOUT receiver programme.
+    10. In the pop-up window for `Composite Mode` select `Premultiplied Alpha`.
+    11. You should now see the `Actors` you have selected in Unreal as an alpha channel in OBS/ your SPOUT receiver programme.
 
 
 
@@ -405,7 +405,7 @@ The plugin can be used to input/ output any SPOUT sender/ receiver and converts 
 
 *   To test with SPOUT you can [download the SPOUT sender/receiver here](https://leadedge.github.io/spout-download.html).
 *   You need to ensure that whatever programmes you are sharing the video texture with are also running on the same GPU. [You can use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.).
-*   You also need to ensure that the programmes you are sharing between are also in ‘High Performance’ mode or something similar, if your computer has any performance throttling (this can be common on laptops).
+*   You also need to ensure that the programmes you are sharing between are also in `High Performance` mode or something similar, if your computer has any performance throttling (this can be common on laptops).
 
 ### Delivering to OBS
 
