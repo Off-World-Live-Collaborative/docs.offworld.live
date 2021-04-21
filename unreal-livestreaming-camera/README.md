@@ -27,7 +27,7 @@ The plugin is compatible with DX11 and DX12 APIs and so can be used for streamin
 
 1. Ensure that all instances of your Unreal Project are closed.
 2. If you do not have any Plugins installed in your project then create a new ‘Plugins’ folder in your ‘Project’ folder and copy the unzipped plugin inside.
-3. If you already have Plugins in your project then open the ‘Plugins’ folder to find the '**OWL_LivestreamingCamera’ **folder and copy it into the existing ‘Plugins’ folder in your Project.
+3. If you already have Plugins in your project then open the ‘Plugins’ folder to find the '**OWL_LivestreamingCamera`folder and copy it into the existing ‘Plugins’ folder in your Project.
 
 
 
