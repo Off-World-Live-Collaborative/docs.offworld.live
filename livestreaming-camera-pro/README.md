@@ -440,7 +440,7 @@ First, please [follow the instructions for installing the](https://docs.google.c
 *   For ray-tracing, RTX (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
 *   Your Windows SDK should be updated to the latest version. Please use Visual Studio to check this (it should be at least above version 19XXX)
 
-### Copyright
+## Copyright
 
 
 Copyright © 2021 Off World Live Limited. All rights reserved.

@@ -10,6 +10,15 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap');
 
+    .sidebar-nav ul ul ul {
+      display: none;
+    }
+    .sidebar-nav ul li.active > ul,
+    .sidebar-nav ul li.expanded > ul
+     {
+      display: block;
+    }
+
     :root {
       --mono-hue: 250;
       --mono-saturation: 1%;
@@ -21,6 +30,7 @@
       --sidebar-width: 25rem;
       --sidebar-background: #0f1a21;
     }
+
     @media screen and (max-width: 600px) {
       nav.app-nav {
         position: relative;
@@ -43,10 +53,61 @@
       subMaxLevel: 3,
       auto2top: true,
       relativePath: true,
+      sidebarDisplayLevel: 1,
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            document.querySelectorAll('.sidebar-nav ul > ul')
+              .forEach((el) => {
+                const p = el.parentElement;
+                let lastLi = undefined;
+                Array.from(p.children).forEach((c) => {
+                  if (c.tagName === 'LI') {
+                    lastLi = c;
+                  }
+                  if (c === el && lastLi) {
+                    lastLi.appendChild(el);
+                    return;
+                  }
+                })
+              })
+            const allFiles = document.querySelectorAll('.sidebar-nav ul ul li');
+            allFiles.forEach(f => {
+              f.addEventListener('click', (e) =>{
+                if (!Array.from(f.children).find(c => c === e.target)) {
+                  return;
+                }
+                if (f.classList.contains('expanded')) {
+                  f.classList.remove('expanded');
+                } else {
+                  document.querySelectorAll('.expanded').forEach((e) => {
+                    e.classList.remove('expanded');
+                  })
+                  f.classList.add('expanded');
+                  let parent = f.parentElement;
+                  while(true) {
+                    if (!parent) {
+                      return;
+                    }
+                    if (parent.tagName === 'LI'){
+                      parent.classList.add('expanded');
+                    }
+                    parent = parent.parentElement;
+                    if (parent.tagName === 'DIV') {
+                      return;
+                    }
+                  }
+                }
+              })
+            });
+          });
+        }
+       ]
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
 </body>
 </html>
