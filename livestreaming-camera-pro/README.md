@@ -58,10 +58,13 @@ There are three main components to the toolkit:
 
 ## Spout Sender Manager
 
+### Overview
 
 - The `Spout Sender Manager` is an Unreal `Actor` that you use to manage different real-time Spout video ouputs from Unreal. 
 - It allows you to output any `Render Target` from Unreal to Spout (such as those from `OWL Cinecam`, `Composure` or `Virtual Camera Plugin`)
-- It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.  
+- It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
+
+### Installation
 - Please install as follows:
 
 1. Find the `OWLSpoutSenderManager` `Actor` in the `Place Actors`panel and drag it into your scene.
@@ -82,10 +85,14 @@ You need to:
 
 ## Spout Receiver Manager
 
+### Overview
+
 - The `Spout Receiver Manager` is an Unreal `Actor` that you use to manage different real-time Spout video inputs to Unreal. 
 - Inputs are managed as  `Render Targets` in the same way as the `Spout Sender`
 - You need to create a `Material` from your `Render Target` to add the video input to `Actors` in your scene (explained below).
-- It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.  
+- It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
+
+### Installation
 - Please install as follows:
 
 1. Find the `OWLSpoutReceiverManager` `Actor` in the `Place Actors`panel and drag it into your scene.  
@@ -113,10 +120,12 @@ You need to:
 
 ## OWL Cinecam
 
+### Overview
+
 - The `OWL Cinecam` is a modified Unreal `Cinecam` that outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to stream video from the `Cinecam` to `Spout`.
 - It includes all normal `Cinecam` features in addition to certain `Scene Capture` features like `Alpha`and `Resolution`(see details below).
 
-### Cinecam Setup
+### Installation
 - Please install as follows:
 1. Find the `OWLCine Cam Capture` `Actor` in the `Place Actors` panel and drag it into your scene.
 ![OWL Cinecam](images/owlcinecamactor.jpg)
