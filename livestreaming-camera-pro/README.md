@@ -48,7 +48,7 @@ In order to stream the output from Unreal Engine to the Internet:
 ![Off World Icon](./images/validated.jpg)
 
 
-## Setup Overview
+## Toolkit Overview
 
 There are three main components to the toolkit:
 1. The `Spout Sender Manager` which allows you to live-stream any Unreal `Render Target` from Unreal via `Spout`.
@@ -56,7 +56,7 @@ There are three main components to the toolkit:
 3. The `OWL Cinecam` which allows you to output an Unreal `Cinecam` to a `Render Target` for use either with the `Spout Sender Manager` or in other Unreal processes.
 
 
-### Spout Sender Manager
+## Spout Sender Manager
 
 
 - The `Spout Sender Manager` is an Unreal `Actor` that you use to manage different real-time Spout video ouputs from Unreal. 
@@ -80,7 +80,7 @@ You need to:
 5. You can use the `Active` tick-box to manage which cameras are rendering simultaneously and so reduce computational load.
 
 
-### Spout Receiver Manager
+## Spout Receiver Manager
 
 - The `Spout Receiver Manager` is an Unreal `Actor` that you use to manage different real-time Spout video inputs to Unreal. 
 - Inputs are managed as  `Render Targets` in the same way as the `Spout Sender`
@@ -111,6 +111,11 @@ You need to:
 6. To receive multiple input feeds, just add additional `Array Elements`.
 7. You can use the `Active` tick-box to manage which inputs are rendering simultaneously and so reduce computational load.
 
+## OWL Cinecam
+
+- The `OWL Cinecam` is a modified Unreal `Cinecam` that outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to stream video from the `Cinecam` to `Spout`.
+- It includes all normal `Cinecam` features in addition to certain `Scene Capture` features like `Alpha`and `Resolution`(see details below).
+
 ### Cinecam Setup
 - Please install as follows:
 1. Find the `OWLCine Cam Capture` `Actor` in the `Place Actors` panel and drag it into your scene.
@@ -124,10 +129,6 @@ You need to:
 5. You will now see your `Render Target` connected to your `OWL Cinecam`
 ![OWL Cinecam Render Target Complete](images/cinerender.jpg) 
 
-## OWL Cinecam
-
-- The `OWL Cinecam` is a modified Unreal `Cinecam` that outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to stream video from the `Cinecam` to `Spout`.
-- It includes all normal `Cinecam` features in addition to certain `Scene Capture` features like `Alpha`and `Resolution`(see details below).
 
 ### Features
 
