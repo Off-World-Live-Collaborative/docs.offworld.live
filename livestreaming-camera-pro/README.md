@@ -233,7 +233,7 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
     ![OBS Alpha View](images/obsalphaview.jpg)
 
 ---
-# DLSS & OWL Cinecam
+## DLSS & OWL Cinecam
 
 `DLSS` works with the `OWL CineCam` in all game targets (`PIE`, `Standalone`, `Packaged`) but not `in-Editor` (because of the `DLSS` implementation). You can configure it as follows:
 1. Ensure that you have the latest NVIDIA GeForce drivers [here](https://www.nvidia.com/drivers)
@@ -242,17 +242,18 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 ![DLSS](images/dlss.png)
 
 ---
-# Composure
+## Composure
 - You can output your `Composure` `Render Target` through the `Spout Sender Manager` as follows:
-1. 
+1. Follow the Unreal `Composure` guide [here](https://docs.unrealengine.com/en-US/WorkingWithMedia/Composure/QuickStart/index.html) (or a similar video guide).
+2. 
 ---
-# Unreal Virtual Camera/ LiveLink
+## Unreal Virtual Camera/ LiveLink
 - You can output from your Unreal Virtual Camera through the `Spout Sender Manager` as follows:
 1. 
 ---
-# Testing Spout
+## Testing Spout
 
-## Delivering to Spout
+### Delivering to Spout
 
 The `Spout Sender Manager` converts DX12 textures to DX11 so they are compatible with `Spout`:
 
@@ -260,41 +261,35 @@ The `Spout Sender Manager` converts DX12 textures to DX11 so they are compatible
 -   [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to ensure that the programs you are sharing the video texture between are running on the same GPU. 
 -   You also need to ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
 
-## Delivering to OBS
+### Delivering to OBS
 
 
 First, please [follow the instructions for installing the](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g) [Spout to OBS plugin](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g) 
 
 ---
-# Optimisation 
+## Optimisation 
 
-## GPU Usage Optimisation
+### GPU Usage Optimisation
 
 
-## CPU Usage Optimisation
+### CPU Usage Optimisation
 
 *   In Editor Preferences in Unreal Engine, please ensure that the box below is unticked. 
 *   Without this, you may find that your stream slows down when you have OBS rather than Unreal running in the foreground on your computer.
 
 
-
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image22.png "image_tooltip")
-
 ---
-# Technical Considerations
+## Technical Considerations
 
 
-## System Requirements
+### System Requirements
 
 
 *   Operating System: Windows 8 or later
 *   For ray-tracing, RTX (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
 *   Your Windows SDK should be updated to the latest version. Please use Visual Studio to check this (it should be at least above version 19XXX)
 ---
-# Copyright
+## Copyright
 
 
 Copyright © 2021 Off World Live Limited. All rights reserved.
