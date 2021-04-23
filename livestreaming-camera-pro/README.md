@@ -10,9 +10,9 @@ SPOUT allows Windows users to share video feeds between programmes running on th
 For any support or further questions, [please get in touch on our discord channel.](https://discord.gg/2PaMtnK)
 
 ---
-# Download
+## Download
 
-## Unreal Plugin
+### Unreal Plugin
 
 1. You will receive an email invitation to download the plugin. Click the link and you will be taken to the registration/ download page.
 ![Alpha Email](./images/alphaemail.jpg)
@@ -20,7 +20,7 @@ For any support or further questions, [please get in touch on our discord channe
 ![Accept Invite](./images/acceptinvite.jpg)
 3. Please accept 
 
-## OBS-to-SPOUT Plugin
+### OBS-to-SPOUT Plugin
 
 In order to stream the output from Unreal Engine to the Internet:
 
@@ -29,9 +29,9 @@ In order to stream the output from Unreal Engine to the Internet:
 3. See [Installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 ---
 
-# Installation
+## Installation
 
-## Add the Plugin to your Unreal Project
+###Add the Plugin to your Unreal Project
 
 
 1. Ensure that all instances of your Unreal project are closed and that you are connected to the internet.
@@ -48,7 +48,7 @@ In order to stream the output from Unreal Engine to the Internet:
 ![Off World Icon](./images/validated.jpg)
 
 ---
-# Setup Overview
+## Setup Overview
 
 There are three main components to the toolkit:
 1. The `Spout Sender Manager` which allows you to live-stream any Unreal `Render Target` from Unreal via `Spout`.
@@ -56,7 +56,7 @@ There are three main components to the toolkit:
 3. The `OWL Cinecam` which allows you to output an Unreal `Cinecam` to a `Render Target` for use either with the `Spout Sender Manager` or in other Unreal processes.
 
 ---
-# SPOUT Sender Manager
+## SPOUT Sender Manager
 
 
 - The `SPOUT Sender Manager` is an Unreal `Actor` that you use to manage different real-time Spout video ouputs from Unreal. 
@@ -80,7 +80,7 @@ You need to:
 5. You can use the `Active` tick-box to manage which cameras are rendering simultaneously and so reduce computational load.
 ---
 
-# Spout Receiver Manager
+## Spout Receiver Manager
 
 - The `Spout Receiver Manager` is an Unreal `Actor` that you use to manage different real-time Spout video inputs to Unreal. 
 - Inputs are managed as  `Render Targets` in the same way as the `Spout Sender`
@@ -112,10 +112,12 @@ You need to:
 7. You can use the `Active` tick-box to manage which inputs are rendering simultaneously and so reduce computational load.
 
 ---
-# OWL Cinecam
+## OWL Cinecam
 
 - The `OWL Cinecam` is a modified Unreal `Cinecam` that outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to stream video from the `Cinecam` to `Spout`.
 - It includes all normal `Cinecam` features in addition to certain `Scene Capture` features like `Alpha`and `Resolution`(see details below).
+
+### Setup
 - Please install as follows:
 1. Find the `OWLCine Cam Capture` `Actor` in the `Place Actors` panel and drag it into your scene.
 ![OWL Cinecam](images/owlcinecamactor.jpg)
@@ -129,17 +131,17 @@ You need to:
 ![OWL Cinecam Render Target Complete](images/cinerender.jpg) 
 
 ---
-## OWL Cinecam Features
+### Features
 
 - The `OWL Cinecam` combines features from the Unreal `Cinecam` and `Scene Capture 2D` to create a streaming camera that benefits from the features and rendering pipeline of `Cinecam`.
 
 
-####Render Texture Target:
+#### Render Texture Target:
   
 - You can select the `Render Texture Target` that you want to attach to the `OWL Cinecam` using the drop-down as described above in `OWL Cinecam` step 3.
 - You can create multiple `Render Targets` and use `Blueprints` to switch between then as required.
 
-####Resolution/ Aspect Ratio:
+#### Resolution/ Aspect Ratio:
 
 - The `OWL Cinecam` has both a `Resolution` and an `Aspect Ratio`.
  ![Resolution and Aspect Ratio](images/resolutionaspect.jpg) 
@@ -149,19 +151,19 @@ You need to:
 ![Constrain Ratio](images/constrain.jpg) 
 
 
-####Render Target Clear Color/ Gamma
+#### Render Target Clear Color/ Gamma
 
 - The `Render Target` `Gamma` is exposed in the `Details` panel and set to 2.2 as this is the optimal colour setting for streaming.  
 - The `Clear Colour` settings can be used to change the default colour of the `Render Texture`  (e.g. if you want to send a green screen background for keying in `OBS Studio`).
 ![Clear Colour/ Gamma](images/clearcolour.jpg) 
 
-####Pause Rendering:
+#### Pause Rendering:
 
 -   This enables you to `Pause Rendering` on the `OWL Cinecam` which is useful for saving GPU power when using live-editing.
 -   This will stream a static/ paused image if `Pause Rendering` is selected in the `OWL Cinecam` `Details` panel and `Active` is selected in the `Spout Sender Manager` (for that `OWL Cinecam`). This is useful if you want to see the viewport of your different cameras but only render a live video-feed from a single camera at a time).
 ![Pause Rendering](images/pauserendering.jpg) 
 
-####Use Show Only/ Hidden Actors:
+#### Use Show Only/ Hidden Actors:
 
 
 -   `Show Only` is used to select specific `Actors` to appear in an alpha channel output.
@@ -169,12 +171,12 @@ You need to:
 -  Both require a post-process volume (see full guide below).
 ![Show Only/ Hidden Actors](images/showhide.jpg) 
 
-####Max View Distance Override:
+#### Max View Distance Override:
 
 *   This can be used to cull distant objects from a reflection.
 ![Max Distance](images/maxview.jpg) 
 
-####Standard Cinecam Features:
+#### Standard Cinecam Features:
 
 *   The `OWL Cinecam` also includes the following standard `Cinecam` features which can be used to select properties such as `Aspect Ratio` and `Depth of Field`:
     *   `Filmback`
@@ -187,15 +189,14 @@ You need to:
 ![Cinecam Features](images/cinecamfeatures.jpg) 
 
 ---
-## Depth of Field
+### Depth of Field
 
 
 - The `OWL Cinecam` includes all the of the `Depth of Field` capabilities from the Unreal `Cinecam` which are split across the `Current Camera Settings` and `Post Process` sections.
 - For more information about `Depth of Field` [please see the Unreal guidelines here](https://docs.unrealengine.com/en-US/RenderingAndGraphics/PostProcessEffects/DepthOfField/CinematicDOFMethods/index.html)
 
 ---
-## Post Processing
-
+### Post Processing
 
 The `OWL Cinecam` uses the `Viewport` rendering pipeline from Unreal and so can take advantage of `Temporal Anti-Aliasing`, `TAA Motion Blur` and `TAA Upsampling`.
 -   All of these can be disabled via the tick-boxes in the `OWL Cinecam` details panel.
@@ -203,7 +204,7 @@ The `OWL Cinecam` uses the `Viewport` rendering pipeline from Unreal and so can 
 ![Post Process](images/postprocess.jpg)
 
 ---
-## Alpha Channel Output
+### Alpha Channel Output
 
 
 You can select specific `Actors` to show/ hide (but only `Actors`, not `Components` or `Instance Meshes`) using the `Hidden Actors` and `Show Only Actors` `Arrays` as follows:
