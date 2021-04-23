@@ -31,7 +31,7 @@ In order to stream the output from Unreal Engine to the Internet:
 
 ## Installation
 
-###Add the Plugin to your Unreal Project
+### Add the Plugin to your Unreal Project
 
 
 1. Ensure that all instances of your Unreal project are closed and that you are connected to the internet.
@@ -255,7 +255,7 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 ![CompSender](images/compspoutsender.jpg)
 
 ## Unreal Virtual Camera/ LiveLink
-- The Unreal `Virtual Camera` 
+- The Unreal `Virtual Camera`allows you to control your `OWL Cinecam` from an external device. 
 - You can output from your Unreal Virtual Camera through the `Spout Sender Manager` as follows:
 1. 
 
