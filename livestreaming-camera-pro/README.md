@@ -14,8 +14,11 @@ For any support or further questions, [please get in touch on our discord channe
 
 ## Unreal Plugin
 
-1.  
-2. Download and unzip the downloaded plugin.
+1. You will receive an email invitation to download the plugin. Click the link and you will be taken to the registration/ download page.
+![Alpha Email](./images/alphaemail.jpg)
+2. You will be asked if you want to accept the plugin invitation.
+![Accept Invite](./images/acceptinvite.jpg)
+3. Please accept 
 
 ## OBS-to-SPOUT Plugin
 
@@ -33,9 +36,9 @@ In order to stream the output from Unreal Engine to the Internet:
 
 1. Ensure that all instances of your Unreal project are closed and that you are connected to the internet.
 2. If you do not have any `Plugins` installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
-![Creating the plugin directory](./images/CreatePluginDir.jpg "Creating the plugin directory")
+![Creating the plugin directory](./images/CreatePluginDir.jpg)
 3. If you already have `Plugins` in your project then open the `Plugins` folder to find the `OWLLivestreamingToolkit` folder and copy it into the existing `Plugins` folder in your `Project`.
-![Copy the plugin folder](./images/CopyPluginFolder.jpg "Copying the plugin folder")
+![Copy the plugin folder](./images/CopyPluginFolder.jpg)
 4. When installed correctly, the folder structure should read `Project`/Plugins/OWLLivestreamingToolkit.
 5. Open your Unreal project and you will see an `Off World Live` icon above your viewport. Click it and you will be taken to login.
 ![Off World Icon](./images/login.jpg)
