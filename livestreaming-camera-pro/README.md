@@ -9,7 +9,7 @@ SPOUT allows Windows users to share video feeds between programmes running on th
 
 For any support or further questions, [please get in touch on our discord channel.](https://discord.gg/2PaMtnK)
 
----
+
 ## Download
 
 ### Unreal Plugin
@@ -27,7 +27,7 @@ In order to stream the output from Unreal Engine to the Internet:
 1. [Install OBS Studio](https://obsproject.com/download)
 2. Install our [Spout2 Source Plugin for OBS Studio (64bit).](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
 3. See [Installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
----
+
 
 ## Installation
 
@@ -47,7 +47,7 @@ In order to stream the output from Unreal Engine to the Internet:
 7. Validate your login and you will be returned to Unreal.
 ![Off World Icon](./images/validated.jpg)
 
----
+
 ## Setup Overview
 
 There are three main components to the toolkit:
@@ -55,11 +55,11 @@ There are three main components to the toolkit:
 2. The `Spout Receiver Manager` which allows you to receive any real-time video feeds from `Spout` in Unreal.
 3. The `OWL Cinecam` which allows you to output an Unreal `Cinecam` to a `Render Target` for use either with the `Spout Sender Manager` or in other Unreal processes.
 
----
-## SPOUT Sender Manager
+
+## Spout Sender Manager
 
 
-- The `SPOUT Sender Manager` is an Unreal `Actor` that you use to manage different real-time Spout video ouputs from Unreal. 
+- The `Spout Sender Manager` is an Unreal `Actor` that you use to manage different real-time Spout video ouputs from Unreal. 
 - It allows you to output any `Render Target` from Unreal to Spout (such as those from `OWL Cinecam`, `Composure` or `Virtual Camera Plugin`)
 - It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.  
 - Please install as follows:
@@ -78,7 +78,7 @@ You need to:
  ![Render Target](./images/rendertarget.jpg)
 4. To stream multiple cameras, just add additional `Array Elements`.
 5. You can use the `Active` tick-box to manage which cameras are rendering simultaneously and so reduce computational load.
----
+
 
 ## Spout Receiver Manager
 
@@ -88,9 +88,9 @@ You need to:
 - It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.  
 - Please install as follows:
 
-1. Find the `OWLSPOUTReceiverManager` `Actor` in the `Place Actors`panel and drag it into your scene.  
+1. Find the `OWLSpoutReceiverManager` `Actor` in the `Place Actors`panel and drag it into your scene.  
 ![Spout Receiver Manager](images/spoutreceiver.jpg "image_tooltip")
-2. In `World Outliner`select `OWLSPOUTReceiverManager`so it opens in your `Details` panel.
+2. In `World Outliner`select `OWLSpoutReceiverManager`so it opens in your `Details` panel.
 3. In your `Details` panel add a `Spout Receiver` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its `Members` (there are 3). 
 ![Spout Receiver Details Panel](./images/receiverarray.jpg)
 4. To receive your video input/s you need to:
@@ -111,7 +111,6 @@ You need to:
 6. To receive multiple input feeds, just add additional `Array Elements`.
 7. You can use the `Active` tick-box to manage which inputs are rendering simultaneously and so reduce computational load.
 
----
 ## OWL Cinecam
 
 - The `OWL Cinecam` is a modified Unreal `Cinecam` that outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to stream video from the `Cinecam` to `Spout`.
@@ -130,7 +129,6 @@ You need to:
 5. You will now see your `Render Target` connected to your `OWL Cinecam`
 ![OWL Cinecam Render Target Complete](images/cinerender.jpg) 
 
----
 ### Features
 
 - The `OWL Cinecam` combines features from the Unreal `Cinecam` and `Scene Capture 2D` to create a streaming camera that benefits from the features and rendering pipeline of `Cinecam`.
@@ -188,14 +186,14 @@ You need to:
     *  `Horizontal Field of View`
 ![Cinecam Features](images/cinecamfeatures.jpg) 
 
----
+
 ### Depth of Field
 
 
 - The `OWL Cinecam` includes all the of the `Depth of Field` capabilities from the Unreal `Cinecam` which are split across the `Current Camera Settings` and `Post Process` sections.
 - For more information about `Depth of Field` [please see the Unreal guidelines here](https://docs.unrealengine.com/en-US/RenderingAndGraphics/PostProcessEffects/DepthOfField/CinematicDOFMethods/index.html)
 
----
+
 ### Post Processing
 
 The `OWL Cinecam` uses the `Viewport` rendering pipeline from Unreal and so can take advantage of `Temporal Anti-Aliasing`, `TAA Motion Blur` and `TAA Upsampling`.
@@ -203,7 +201,6 @@ The `OWL Cinecam` uses the `Viewport` rendering pipeline from Unreal and so can 
 -   All other post-process settings are as standard for the `OWL Cinecam`.
 ![Post Process](images/postprocess.jpg)
 
----
 ### Alpha Channel Output
 
 
@@ -232,7 +229,7 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
     c. You should now see the `Actors` you have selected in Unreal as an alpha channel in `OBS Studio`/ your `Spout` receiver programme.
     ![OBS Alpha View](images/obsalphaview.jpg)
 
----
+
 ## DLSS & OWL Cinecam
 
 `DLSS` works with the `OWL CineCam` in all game targets (`PIE`, `Standalone`, `Packaged`) but not `in-Editor` (because of the `DLSS` implementation). You can configure it as follows:
@@ -241,16 +238,16 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 3. Use blueprints to set up a toggle for DLSS at runtime such as this: 
 ![DLSS](images/dlss.png)
 
----
+
 ## Composure
 - You can output your `Composure` `Render Target` through the `Spout Sender Manager` as follows:
 1. Follow the Unreal `Composure` guide [here](https://docs.unrealengine.com/en-US/WorkingWithMedia/Composure/QuickStart/index.html) (or a similar video guide).
 2. 
----
+
 ## Unreal Virtual Camera/ LiveLink
 - You can output from your Unreal Virtual Camera through the `Spout Sender Manager` as follows:
 1. 
----
+
 ## Testing Spout
 
 ### Delivering to Spout
@@ -266,7 +263,7 @@ The `Spout Sender Manager` converts DX12 textures to DX11 so they are compatible
 
 First, please [follow the instructions for installing the](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g) [Spout to OBS plugin](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g) 
 
----
+
 ## Optimisation 
 
 ### GPU Usage Optimisation
@@ -278,7 +275,6 @@ First, please [follow the instructions for installing the](https://docs.google.c
 *   Without this, you may find that your stream slows down when you have OBS rather than Unreal running in the foreground on your computer.
 
 
----
 ## Technical Considerations
 
 
@@ -288,7 +284,8 @@ First, please [follow the instructions for installing the](https://docs.google.c
 *   Operating System: Windows 8 or later
 *   For ray-tracing, RTX (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
 *   Your Windows SDK should be updated to the latest version. Please use Visual Studio to check this (it should be at least above version 19XXX)
----
+
+
 ## Copyright
 
 
