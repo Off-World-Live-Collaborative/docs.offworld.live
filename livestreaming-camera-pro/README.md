@@ -1,20 +1,20 @@
-# Unreal Engine Livestreaming Toolkit
+# Unreal Engine: Livestreaming Toolkit
 
 
-This plugin enables you to manage sending and receiving multiple real-time video inputs/outputs to/from Unreal Engine in-Editor or at Runtime to/ from [any SPOUT compatible programme](https://spout.zeal.co/) including [OBS Studio (64bit)](https://github.com/Off-World-Live/obs-spout2-source-plugin)
+This plugin enables you to send and receive live-stream video to/from `Unreal Engine` to/from [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin) or [other programs](https://spout.zeal.co/) with no computational overhead, compression or latency.
 
-It is compatible with all significant Unreal creative tools including (but not limited to): Cinecam, Composure, DLSS, Virtual Camera plugin, Livelink etc.
+It works both `in-Editor` and `at Runtime`.
+ 
+It works with `Unreal` tools such as: `Cinecam`, `Composure`, `DLSS`, `Virtual Camera`, `Livelink`, `Metahumans` etc.
 
-SPOUT allows Windows users to share video feeds between programmes running on the same GPU with no computational overhead, compression or latency, making it the best way to stream realtime-video from a single machine.
-
-For any support or further questions, [please get in touch on our discord channel.](https://discord.gg/2PaMtnK)
+For support, [please get in touch on our `Discord` channel.](https://discord.gg/2PaMtnK)
 
 
-## Download
+## Plugin Download
 
 ### Unreal Plugin
 
-1. You will receive an email invitation to download the plugin. Click the link and you will be taken to the registration/ download page.
+1. You will receive an email invitation to download the plugin. Click the `Accept Invitation` link and you will be taken to the `Registration`/ `Download` page.
 ![Alpha Email](./images/alphaemail.jpg)
 2. You will be asked if you want to accept the plugin invitation.
 ![Accept Invite](./images/acceptinvite.jpg)
@@ -22,27 +22,27 @@ For any support or further questions, [please get in touch on our discord channe
 
 ### OBS-to-SPOUT Plugin
 
-In order to stream the output from Unreal Engine to the Internet:
+In order to stream the output from `Unreal Engine` to the Internet:
 
-1. [Install OBS Studio](https://obsproject.com/download)
-2. Install our [Spout2 Source Plugin for OBS Studio (64bit).](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
-3. See [Installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
+1. [Install `OBS Studio`](https://obsproject.com/download)
+2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
+3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
 
-## Installation
+## Plugin Installation
 
 ### Add the Plugin to your Unreal Project
 
 
-1. Ensure that all instances of your Unreal project are closed and that you are connected to the internet.
+1. Ensure that all instances of your `Unreal` project are closed and that you are connected to the internet.
 2. If you do not have any `Plugins` installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
 ![Creating the plugin directory](./images/CreatePluginDir.jpg)
 3. If you already have `Plugins` in your project then open the `Plugins` folder to find the `OWLLivestreamingToolkit` folder and copy it into the existing `Plugins` folder in your `Project`.
 ![Copy the plugin folder](./images/CopyPluginFolder.jpg)
-4. When installed correctly, the folder structure should read `Project`/Plugins/OWLLivestreamingToolkit.
-5. Open your Unreal project and you will see an `Off World Live` icon above your viewport. Click it and you will be taken to login.
+4. When installed correctly, the folder structure should read `Project`/`Plugins`/`OWLLivestreamingToolkit`.
+5. Open your `Unreal` project and you will see an `Off World Live` icon above your `Viewport`. Click it and you will be taken to login.
 ![Off World Icon](./images/login.jpg)
-6. You will be taken to the browser to login.
+6. You have an option to sign in with your `Gmail` account or any other email.
 ![Off World Icon](./images/signin.jpg) 
 7. Validate your login and you will be returned to Unreal.
 ![Off World Icon](./images/validated.jpg)
@@ -51,17 +51,40 @@ In order to stream the output from Unreal Engine to the Internet:
 ## Toolkit Overview
 
 There are three main components to the toolkit:
-1. The `Spout Sender Manager` which allows you to live-stream any Unreal `Render Target` from Unreal via `Spout`.
-2. The `Spout Receiver Manager` which allows you to receive any real-time video feeds from `Spout` in Unreal.
-3. The `OWL Cinecam` which allows you to output an Unreal `Cinecam` to a `Render Target` for use either with the `Spout Sender Manager` or in other Unreal processes.
+1. The `OWL Cinecam` which allows you to output an `Unreal` `Cinecam` to a `Render Target` for use with the `Spout Sender Manager` or as a replacement for `Unreal`'s `Scene Capture 2D` `Actor` (see the benefits of this below).
+2. The `Spout Sender Manager` which allows you to live-stream any `Unreal` `Render Target` to `OBS Studio` or any other `Spout` compatible program.
+2. The `Spout Receiver Manager` which allows you to receive any real-time video feeds from and `Spout` compatible program in `Unreal`.
 
+## OWL Cinecam
+
+### Overview
+
+- The `OWL Cinecam` is a modified `Unreal` `Cinecam` that combines the best features of the `Unreal` `Cinecam` and `Scene Capture 2D`: 
+    - It uses the `Unreal` `Viewport` rendering pipeline which means it will output exactly the same colours as your `Viewport`. 
+    - It can be used with rendering optimisations such as `DLSS` and `TAAU`.
+    - It benefits from `Cinecam` features such as `Depth of Field` and `Filmback`.
+    - It  integrates useful `Scene Capture 2D` features like `Alpha` and `Resolution`.
+    - It outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to live-stream video.
+
+### Installation
+- Please install as follows:
+1. Find the `OWLCine Cam Capture` `Actor` in the `Place Actors` panel and drag it into your scene.
+![OWL Cinecam](images/owlcinecamactor.jpg)
+2. In `World Outliner`select `OWLCine Cam Capture`so it opens in your `Details` panel.
+![OWL Cinecam Details](images/cinecamdetails.jpg)
+3. In your `Details` panel, create a `Render Target` to receive the video feed from your `OWL Cinecam` by clicking the dropdown next to `Texture Target` and selecting `Render Target`.
+![OWL Cinecam Details](images/cinecamrendertarget.jpg) 
+4. Name your `Render Target` so that you can select it from the drop down list.
+![OWL Cinecam Render Target Name](images/rendertargetname.jpg) 
+5. You will now see your `Render Target` connected to your `OWL Cinecam`
+![OWL Cinecam Render Target Complete](images/cinerender.jpg) 
 
 ## Spout Sender Manager
 
 ### Overview
 
-- The `Spout Sender Manager` is an Unreal `Actor` that you use to manage different real-time Spout video ouputs from Unreal. 
-- It allows you to output any `Render Target` from Unreal to Spout (such as those from `OWL Cinecam`, `Composure` or `Virtual Camera Plugin`)
+- The `Spout Sender Manager` is an `Unreal` `Actor` that you use to manage different real-time `Spout` video ouputs from `Unreal`. 
+- It allows you to output any `Render Target` from `Unreal` to `Spout` (such as those from `OWL Cinecam` or `Composure`)
 - It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
 
 ### Installation
@@ -73,22 +96,20 @@ There are three main components to the toolkit:
 ![Spout Sender Details Panel](./images/spoutsenderdetails.jpg)
 3. In your `Details` panel add a `Spout Sender` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its `Members` (there are 4). 
 ![Spout Sender Array](./images/senderarray.jpg)
-You need to:
- 
+- You need to:
     a.  Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in OBS/ your Spout receiver programme.
     b. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured below or from another Unreal output.) 
     c. Click the `Active` box to begin sending to Spout.
  ![Render Target](./images/rendertarget.jpg)
 4. To stream multiple cameras, just add additional `Array Elements`.
-5. You can use the `Active` tick-box to manage which cameras are rendering simultaneously and so reduce computational load.
-
+5. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
 
 ## Spout Receiver Manager
 
 ### Overview
 
-- The `Spout Receiver Manager` is an Unreal `Actor` that you use to manage different real-time Spout video inputs to Unreal. 
-- Inputs are managed as  `Render Targets` in the same way as the `Spout Sender`
+- The `Spout Receiver Manager` is an `Unreal` `Actor` that you use to manage different real-time `Spout` video inputs to `Unreal`. 
+- Inputs are managed as `Render Targets` in the same way as the `Spout Sender Manager`
 - You need to create a `Material` from your `Render Target` to add the video input to `Actors` in your scene (explained below).
 - It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
 
@@ -116,40 +137,19 @@ You need to:
     b. Drag the newly created `Material` (which will be called the same as your `Render Target`) onto the elements in your level.
 ![Drag Material](images/dragmaterial.jpg)
 6. To receive multiple input feeds, just add additional `Array Elements`.
-7. You can use the `Active` tick-box to manage which inputs are rendering simultaneously and so reduce computational load.
+7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
 
-## OWL Cinecam
-
-### Overview
-
-- The `OWL Cinecam` is a modified Unreal `Cinecam` that outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to stream video from the `Cinecam` to `Spout`.
-- It includes all normal `Cinecam` features in addition to certain `Scene Capture` features like `Alpha`and `Resolution`(see details below).
-
-### Installation
-- Please install as follows:
-1. Find the `OWLCine Cam Capture` `Actor` in the `Place Actors` panel and drag it into your scene.
-![OWL Cinecam](images/owlcinecamactor.jpg)
-2. In `World Outliner`select `OWLCine Cam Capture`so it opens in your `Details` panel.
-![OWL Cinecam Details](images/cinecamdetails.jpg)
-3. In your `Details` panel, create a `Render Target` to receive the video feed from your `OWL Cinecam` by clicking the dropdown next to `Texture Target` and selecting `Render Target`.
-![OWL Cinecam Details](images/cinecamrendertarget.jpg) 
-4. Name your `Render Target` so that you can select it from the drop down list.
-![OWL Cinecam Render Target Name](images/rendertargetname.jpg) 
-5. You will now see your `Render Target` connected to your `OWL Cinecam`
-![OWL Cinecam Render Target Complete](images/cinerender.jpg) 
-
-
-### Features
+## OWL Cinecam Features
 
 - The `OWL Cinecam` combines features from the Unreal `Cinecam` and `Scene Capture 2D` to create a streaming camera that benefits from the features and rendering pipeline of `Cinecam`.
 
 
-#### Render Texture Target:
+### Render Texture Target:
   
 - You can select the `Render Texture Target` that you want to attach to the `OWL Cinecam` using the drop-down as described above in `OWL Cinecam` step 3.
 - You can create multiple `Render Targets` and use `Blueprints` to switch between then as required.
 
-#### Resolution/ Aspect Ratio:
+### Resolution/ Aspect Ratio:
 
 - The `OWL Cinecam` has both a `Resolution` and an `Aspect Ratio`.
  ![Resolution and Aspect Ratio](images/resolutionaspect.jpg) 
@@ -159,19 +159,19 @@ You need to:
 ![Constrain Ratio](images/constrain.jpg) 
 
 
-#### Render Target Clear Color/ Gamma
+### Render Target Clear Color/ Gamma
 
 - The `Render Target` `Gamma` is exposed in the `Details` panel and set to 2.2 as this is the optimal colour setting for streaming.  
 - The `Clear Colour` settings can be used to change the default colour of the `Render Texture`  (e.g. if you want to send a green screen background for keying in `OBS Studio`).
 ![Clear Colour/ Gamma](images/clearcolour.jpg) 
 
-#### Pause Rendering:
+### Pause Rendering:
 
 -   This enables you to `Pause Rendering` on the `OWL Cinecam` which is useful for saving GPU power when using live-editing.
 -   This will stream a static/ paused image if `Pause Rendering` is selected in the `OWL Cinecam` `Details` panel and `Active` is selected in the `Spout Sender Manager` (for that `OWL Cinecam`). This is useful if you want to see the viewport of your different cameras but only render a live video-feed from a single camera at a time).
 ![Pause Rendering](images/pauserendering.jpg) 
 
-#### Use Show Only/ Hidden Actors:
+### Use Show Only/ Hidden Actors:
 
 
 -   `Show Only` is used to select specific `Actors` to appear in an alpha channel output.
@@ -179,21 +179,21 @@ You need to:
 -  Both require a post-process volume (see full guide below).
 ![Show Only/ Hidden Actors](images/showhide.jpg) 
 
-#### Max View Distance Override:
+### Max View Distance Override:
 
-*   This can be used to cull distant objects from a reflection.
+-   This can be used to cull distant objects from a reflection.
 ![Max Distance](images/maxview.jpg) 
 
-#### Standard Cinecam Features:
+### Standard Cinecam Features:
 
-*   The `OWL Cinecam` also includes the following standard `Cinecam` features which can be used to select properties such as `Aspect Ratio` and `Depth of Field`:
-    *   `Filmback`
-    *   `Lens Settings`
-    *   `Focus Settings`
-    *   `Focal Length`
-    *   `Aperture`
-    *   `Lookat tracking settings`
-    *  `Horizontal Field of View`
+-   The `OWL Cinecam` also includes the following standard `Cinecam` features which can be used to select properties such as `Aspect Ratio` and `Depth of Field`:
+    -   `Filmback`
+    -   `Lens Settings`
+    -   `Focus Settings`
+    -   `Focal Length`
+    -   `Aperture`
+    -   `Lookat tracking settings`
+    -  `Horizontal Field of View`
 ![Cinecam Features](images/cinecamfeatures.jpg) 
 
 
