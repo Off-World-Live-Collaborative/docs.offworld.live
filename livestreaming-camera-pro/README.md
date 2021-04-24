@@ -59,10 +59,10 @@ There are three main components to the toolkit:
 
 ### Overview
 
-- The `OWL Cinecam` is a modified `Unreal` `Cinecam` that combines the best features of the `Unreal` `Cinecam` and `Scene Capture 2D`: 
+- The `OWL Cinecam` is a modified `Unreal` `Cinecam` that combines the best features of the `Unreal` `Ci necam` and `Scene Capture 2D`: 
     - It uses the `Unreal` `Viewport` rendering pipeline which means it will output exactly the same colours as your `Viewport`. 
     - It can be used with rendering optimisations such as `DLSS` and `TAAU`.
-    - It benefits from `Cinecam` features such as `Depth of Field` and `Filmback`.
+    - It benefits from `Cinecam` features such as `Depth of Field`, `Filmback` and `Post Processing`.
     - It  integrates useful `Scene Capture 2D` features like `Alpha` and `Resolution`.
     - It outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to live-stream video.
 
@@ -97,9 +97,9 @@ There are three main components to the toolkit:
 3. In your `Details` panel add a `Spout Sender` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its `Members` (there are 4). 
 ![Spout Sender Array](./images/senderarray.jpg)
 - You need to:
-    a.  Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in OBS/ your Spout receiver programme.
-    b. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured below or from another Unreal output.) 
-    c. Click the `Active` box to begin sending to Spout.
+    a.  Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in `OBS`/ your `Spout` receiver programme.
+    b. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured above or from another `Unreal` output.) 
+    c. Click the `Active` box to begin sending to `Spout`.
  ![Render Target](./images/rendertarget.jpg)
 4. To stream multiple cameras, just add additional `Array Elements`.
 5. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
@@ -141,13 +141,14 @@ There are three main components to the toolkit:
 
 ## OWL Cinecam Features
 
-- The `OWL Cinecam` combines features from the Unreal `Cinecam` and `Scene Capture 2D` to create a streaming camera that benefits from the features and rendering pipeline of `Cinecam`.
+- The `OWL Cinecam` combines features from the `Unreal` `Cinecam` and `Scene Capture 2D` to create a streaming camera that benefits from the features and rendering pipeline of `Cinecam`.
 
 
 ### Render Texture Target:
   
 - You can select the `Render Texture Target` that you want to attach to the `OWL Cinecam` using the drop-down as described above in `OWL Cinecam` step 3.
-- You can create multiple `Render Targets` and use `Blueprints` to switch between then as required.
+- You can create multiple `Render Texture Targets` and use `Blueprints` to switch between then as required.
+![Cinecam Render Target](images/ccrtarget.jpg)
 
 ### Resolution/ Aspect Ratio:
 
@@ -168,7 +169,7 @@ There are three main components to the toolkit:
 ### Pause Rendering:
 
 -   This enables you to `Pause Rendering` on the `OWL Cinecam` which is useful for saving GPU power when using live-editing.
--   This will stream a static/ paused image if `Pause Rendering` is selected in the `OWL Cinecam` `Details` panel and `Active` is selected in the `Spout Sender Manager` (for that `OWL Cinecam`). This is useful if you want to see the viewport of your different cameras but only render a live video-feed from a single camera at a time).
+-   This will stream a static/ paused image if `Pause Rendering` is selected in the `OWL Cinecam` `Details` panel and `Active` is selected in the `Spout Sender Manager` (for that `OWL Cinecam`). This is useful if you want to see the position of your different cameras but only render a live video-feed from a single camera at a time).
 ![Pause Rendering](images/pauserendering.jpg) 
 
 ### Use Show Only/ Hidden Actors:
@@ -192,16 +193,17 @@ There are three main components to the toolkit:
     -   `Focus Settings`
     -   `Focal Length`
     -   `Aperture`
+    -   `Horizontal Field of View`
     -   `Lookat tracking settings`
-    -  `Horizontal Field of View`
+    -   `LOD Distance Factor`
 ![Cinecam Features](images/cinecamfeatures.jpg) 
 
 
 ### Depth of Field
 
 
-- The `OWL Cinecam` includes all the of the `Depth of Field` capabilities from the Unreal `Cinecam` which are split across the `Current Camera Settings` and `Post Process` sections.
-- For more information about `Depth of Field` [please see the Unreal guidelines here](https://docs.unrealengine.com/en-US/RenderingAndGraphics/PostProcessEffects/DepthOfField/CinematicDOFMethods/index.html)
+- The `OWL Cinecam` includes all the of the `Depth of Field` capabilities from the `Unreal` `Cinecam` which are split across the `Current Camera Settings` and `Post Process` sections.
+- For more information about `Depth of Field` [please see the `Unreal` guidelines here](https://docs.unrealengine.com/en-US/RenderingAndGraphics/PostProcessEffects/DepthOfField/CinematicDOFMethods/index.html)
 
 
 ### Post Processing
