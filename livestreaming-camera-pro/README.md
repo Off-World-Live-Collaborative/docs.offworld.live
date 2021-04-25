@@ -1,13 +1,15 @@
 # Unreal Engine: Livestreaming Toolkit
 
 
-This plugin enables you to send and receive live-stream video to/from `Unreal Engine` to/from [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin) or [other programs](https://spout.zeal.co/) with no computational overhead, compression or latency.
+This plugin enables you to send and receive live-stream video to/from `Unreal Engine` to/from [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin) or [other programs](https://spout.zeal.co/) with no computational overhead, compression or latency. 
 
-It works both `in-Editor` and `at Runtime`.
+It works both `in-Editor` and `at Runtime` and is compatible with both `DirectX11` and `DirectX12` (for ray-tracing).
  
 It works with `Unreal` tools such as: `Cinecam`, `Composure`, `DLSS`, `Virtual Camera`, `Livelink`, `Metahumans` etc.
 
 For support, [please get in touch on our `Discord` channel.](https://discord.gg/2PaMtnK)
+
+*N.B. This plugin only works for video sharing on a single GPU. For sharing over the network you will need to use a solution like [`NDI`](https://www.ndi.tv/sdk/).*
 
 
 ## Plugin Download
@@ -266,36 +268,57 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 5. Now if you go to your `Spout Sender Manager`you can create a new `Array Element` using your new `Render Target` for your `Composure` output and stream it wherever you like.
 ![CompSender](images/compspoutsender.jpg)
 
-## Unreal Virtual Camera/ LiveLink
-- The Unreal `Virtual Camera`allows you to control your `OWL Cinecam` from an external device. 
-- You can output from your Unreal Virtual Camera through the `Spout Sender Manager` as follows:
-1. 
+## Unreal Virtual Camera
+- The Unreal `Virtual Camera`allows you to control your `OWL Cinecam` from an external device such as an `Iphone` via the `ARKit` plugin.
+- To do so, you need to attach the `Virtual Camera` `Pawn` to your `OWL Cinecam` then you need to configure your `Virtual Camera` pawn to work with `Live Link` (to be controlled by an external input).
+- Guidance for how to setup the `Virtual Camera` can be found [here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html) and [here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html) (more details below).
+- You can also use the `Unreal` `Virtual Camera Actor`([see instructions here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraActorQuickStart/index.html)) to output a `Render Target` directly to the `Spout Sender Manager` but this uses the `Scene Capture 2D` rendering pipeline, so the `OWL Cinecam` offers a better image quality.
+
+### Attaching the Virtual Camera to the OWL Cinecam
+
+- The `Virtual Camera` can be connected to the `OWL Cinecam` by using the `Vcam` pawn as follows:
+1. Select your `OWL Cinecam` in `World Outliner` and go to its  `Details` panel.
+![OWL Cinecam Details](images/cinecamdetails.jpg)
+2. In the `Details` panel go to `+Add Component` and in the search box type `Vcam` and select this `Component`.
+![Add Vcam Component](images/vcamcomp.jpg)
+3. Drag the `Vcam` `Component` on top of your `OWL Cinecam Capture Component` to attach it to your `OWL Cinecam` so that it is nested below.
+![Attach Vcam Component](images/attachvcam.jpg).
+4. Now, when your `Vcam` is configured (see links below), it will operate your `OWL Cinecam` and output video via its `Render Target` to the `Spout Sender Manager`.
+
+### Configuring the Virtual Camera
+
+-  Step-by-step instructions for how to setup the `Vcam` component can be [found here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html).
+- For more information on how to set up `Live Link` to control the `Vcam` with external devices such as your `Iphone` [see the guidance here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html).
 
 ## Testing Spout
 
-### Delivering to Spout
+- [`Spout`](https://spout.zeal.co/) is the solution used by the plugin to share video textures between `Unreal` and other programs.
+- There will always be a `Spout Sender` which is the program outputting the video and a `Spout Receiver` which is the program receiving the video.
+- If your video feed does not automatically appear in your desired program it is normally because either `Sender` or `Receiver` has an issue.
+- You can troubleshoot `Spout` using the tips below:
+1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
+2. Ensure that Unreal and your other program are running on the same GPU (this is an issue with some laptops). To deal with this:
+    a. Check Windows `Task Manager` to see which GPU your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
+    b. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
+3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
+4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
 
-The `Spout Sender Manager` converts DX12 textures to DX11 so they are compatible with `Spout`:
-
--   You can test`Spout`by downloading the demo[ `Spout` sender/ receiver ](https://leadedge.github.io/spout-download.html).
--   [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to ensure that the programs you are sharing the video texture between are running on the same GPU. 
--   You also need to ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
-
-### Delivering to OBS
-
-
-First, please [follow the instructions for installing the](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g) [Spout to OBS plugin](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g) 
-
-
-## Optimisation 
+## Performance Optimisation 
 
 ### GPU Usage Optimisation
+- Each `Active` `Render Target` creates a new video feed that has to be rendered from `Unreal` and so uses a lot of GPU power.
+- Since `Spout` is zero-latency, a number of tricks can be used for live-editing between different cameras in a seamless way (all of these can be configured via `Blueprints` for control via `OSC` or external devices):
+1. Use the `Pause` tickbox on the `OWL Cinecam` for any static camera that you want to see the location of (for live-editing) but you don't need to have running until you select it as your main camera.
+2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the `Render Target` when you need it (`Paused` and `Active` will show a static image as above).
+3.  Use `Blueprints` to output a reduced `Resolution` for any moving camera that you need to see output from and then automatically increase the `Resolution` to your broadcast requirements when it is selected as your main camera.
+4.  Use a single `OWL Cinecam` but place `Waypoints` in your scene of your different camera angles and then use `Blueprints` to 'teleport' your camera between those different locations live.
 
 
 ### CPU Usage Optimisation
 
-*   In Editor Preferences in Unreal Engine, please ensure that the box below is unticked. 
-*   Without this, you may find that your stream slows down when you have OBS rather than Unreal running in the foreground on your computer.
+- You may find that your stream slows down when you have OBS rather than Unreal running in the foreground on your computer.   
+- To avoid this, in `Editor Preferences` in `Unreal`, please ensure that the `Use Less CPU when in Background` box below is unticked as in the image below:
+![Use Less CPU](images/uselesscpu.jpg) 
 
 
 ## Technical Considerations
@@ -304,9 +327,9 @@ First, please [follow the instructions for installing the](https://docs.google.c
 ### System Requirements
 
 
-*   Operating System: Windows 8 or later
-*   For ray-tracing, RTX (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
-*   Your Windows SDK should be updated to the latest version. Please use Visual Studio to check this (it should be at least above version 19XXX)
+*   Operating System: `Windows` 8 or later
+*   For ray-tracing, `RTX` (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
+*   Your `Windows` SDK should be updated to the latest version. Please use `Visual Studio` to check this (it should be at least above version 19XXX)
 
 
 ## Copyright
