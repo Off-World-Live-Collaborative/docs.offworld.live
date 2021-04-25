@@ -42,11 +42,14 @@ In order to stream the output from `Unreal Engine` to the Internet:
 3. If you already have `Plugins` in your project then open the `Plugins` folder to find the `OWLLivestreamingToolkit` folder and copy it into the existing `Plugins` folder in your `Project`.
 ![Copy the plugin folder](./images/CopyPluginFolder.jpg)
 4. When installed correctly, the folder structure should read `Project`/`Plugins`/`OWLLivestreamingToolkit`.
-5. Open your `Unreal` project and you will see an `Off World Live` icon above your `Viewport`. Click it and you will be taken to login.
+
+### Sign in to Off World Live
+
+1. Open your `Unreal` project and you will see an `Off World Live` icon above your `Viewport`. Click it and you will be taken to login.
 ![Off World Icon](./images/login.jpg)
-6. You have an option to sign in with your `Gmail` account or any other email.
+2. You have an option to sign in with your `Gmail` account or any other email.
 ![Off World Icon](./images/signin.jpg) 
-7. Validate your login and you will be returned to Unreal.
+3. Validate your login and you will be returned to Unreal.
 ![Off World Icon](./images/validated.jpg)
 
 
