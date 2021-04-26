@@ -294,7 +294,7 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 -  Step-by-step instructions for how to setup the `Vcam` component can be [found here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html).
 - For more information on how to set up `Live Link` to control the `Vcam` with external devices such as your `Iphone` [see the guidance here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html).
 
-## Testing Spout
+## Troubleshooting Spout
 
 - [`Spout`](https://spout.zeal.co/) is the solution used by the plugin to share video textures between `Unreal` and other programs.
 - There will always be a `Spout Sender` which is the program outputting the video and a `Spout Receiver` which is the program receiving the video.
