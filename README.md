@@ -1,15 +1,13 @@
 # Documentation
 
-This microsite draws together the documentation
-for all the Off World Live plugins.
+This microsite contains the documentation for all Off World Live plugins.
 
-If you are unfamiliar with what our plugins do, see our
-main website at [offworld.live](https://offworld.live)
+For more information on the plugins, please see our main website: [offworld.live](https://offworld.live)
 
-## Plugin Documentation
+## Current Plugins
 
-* [Unreal Engine Livestreaming Toolkit](./livestreaming-toolkit/README.md)
-* [Unreal Engine 360 Livestreaming Camera](./360-camera/README.md)
-* [Unreal Livestreaming Camera](./unreal-livestreaming-camera/README.md) (this plugin is soon to be deprecated and replaced by the Livestreaming Toolkit)
-* [Spout Plugin for OBS](./obs-spout-plugin/README.md)
+- [Unreal Engine Livestreaming Toolkit](./livestreaming-toolkit/README.md)
+- [Unreal Engine 360 Livestreaming Camera](./360-camera/README.md)
+- [Unreal Livestreaming Camera](./unreal-livestreaming-camera/README.md) (this plugin is soon to be deprecated and replaced by the Livestreaming Toolkit)
+- [Spout Plugin for OBS](./obs-spout-plugin/README.md)
 
