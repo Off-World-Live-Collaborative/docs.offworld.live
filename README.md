@@ -1,6 +1,6 @@
 # Documentation
 
-This microsite contains the documentation for all Off World Live plugins.
+This microsite contains the documentation for all Off World Live tools.
 
 For more information on the plugins, please see our main website: [offworld.live](https://offworld.live)
 
