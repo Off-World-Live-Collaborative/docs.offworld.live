@@ -8,8 +8,8 @@ main website at [offworld.live](https://offworld.live)
 
 ## Plugin Documentation
 
-* [360 Livestreaming Camera](./360-camera/README.md)
-* [Unreal Livestreaming Camera](./unreal-livestreaming-camera/README.md)
-* [Unreal PRO Livestreaming Camera](./livestreaming-camera-pro/README.md)
-* [Spout OBS Plugin](./obs-spout-plugin/README.md)
+* [Unreal Engine Livestreaming Toolkit](./livestreaming-toolkit/README.md)
+* [Unreal Engine 360 Livestreaming Camera](./360-camera/README.md)
+* [Unreal Livestreaming Camera](./unreal-livestreaming-camera/README.md) (this plugin is soon to be deprecated and replaced by the Livestreaming Toolkit)
+* [Spout Plugin for OBS](./obs-spout-plugin/README.md)
 
