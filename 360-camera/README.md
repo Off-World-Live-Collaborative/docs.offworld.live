@@ -1,150 +1,58 @@
-# Unreal 360 Livestreaming Camera
-
-_Plugin for live-streaming a 360 degree video feed from Unreal Engine at runtime_
+# Unreal Engine 360 degree Livestreaming Camera
 
 
-This plugin enables you to live-stream a 360 degree video output from Unreal Engine at runtime to any SPOUT receiver program (see full list here: [https://spout.zeal.co/](https://spout.zeal.co/))
+This plugin enables you to live-stream a 360 degree video output from `Unreal Engine` `at-Runtime` to any [`Spout` receiver program](https://spout.zeal.co/) including [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin)
 
-The plugin is compatible with DX11 and DX12 APIs (for ray-tracing) and has a custom 360 Bloom post-processing algorithm/ pipeline for seamless Bloom in 360 degrees.
-
-It should be combined with our [Spout2 receiver plugin for OBS](https://github.com/Off-World-Live/obs-spout2-source-plugin) in order to live-stream to different internet locations or to record to video using OBS.
+It is compatible with `DirectX11` and `DirectX12` (for ray-tracing) and has a custom 360 degree `Bloom` post-processing algorithm/ pipeline for seamless `Bloom` in 360 degrees.
 
 Video tutorials for installing and using the camera [can be found here](https://www.youtube.com/playlist?list=PLElT6SIg9JnC3ejNkhM4QofbkoXKHkuKQ)
 
+## Registration
 
-## Installation
+1. When you select to `Download Plugin` you will be asked to register your email.
+![360 Download](./images/360download.jpg)
+2. Input your email into the pop-up box.
+![360 Email Pop Up](./images/360registeremail.jpg)
+3. You will receive an email with a box to `Complete Registration`
+![360 Email Registration](./images/360emailreg.jpg)
+4. Please accept the invitation to be taken to the `Download Page`.
+![360 Email Accept](./images/360accept.jpg)
+5. Please select the plugin you want to download.
+![360 Download List](./images/360page.jpg)
 
-#### Accepting Email Invitation
+## Unreal Installation
 
+1. Find the plugin in your `Downloads` folder and unzip. 
+2. Ensure that all instances of your `Unreal Project` are closed.
+3. If you do not have any `Plugins` installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
+4. If you already have `Plugins` in your project then copy the unzipped `OWL360LivestreamingCamera` folder into the existing `Plugins` folder in your `Project`.
+5. When installed correctly, the folder structure should read [`Myproject`]/`Plugins`/`OWL360LivestreamingCamera`]
+![](images/filestructure360.jpg)
 
+## SPOUT Plugin for OBS
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+In order to stream the output from `Unreal Engine` to the Internet:
 
+1. [Install `OBS Studio`](https://obsproject.com/download)
+2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
+3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
-![alt_text](images/image1.png "image_tooltip")
+## Unreal Configuration
 
-
-#### Logging in to Download the Plugin
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
-
-
-### Download the Plugin (for rendering the 360 output in Unreal Engine):
-
-
-
-1. Select the version of the plugin you would like to install.
-
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
-
-
-
-2. Unzip the downloaded plugin.
-
-Adding the Plugin to your Unreal Project
-
-
-
-1. Ensure that all instances of your Unreal Project are closed.
-2. If you do not have any Plugins installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
-3. If you already have Plugins in your project then copy the unzipped `OWL360LivestreamingCamera` folder into the existing `Plugins` folder in your Project.
-4. When installed correctly, the folder structure should read [Myproject]/Plugins/OWL360LivestreamingCamera]
-
-#### Downloading OBS (for streaming the 360 output from Unreal Engine to the internet)
-
-
-1. Install OBS Studio [https://obsproject.com/download](https://obsproject.com/download)
-2. Install our `Spout2 Source Plugin for OBS Studio (64bit)` [https://github.com/Off-World-Live/obs-spout2-source-plugin](https://github.com/Off-World-Live/obs-spout2-source-plugin)
-
-
-## Opening in Unreal
-
-
-1. Open your Unreal Engine Project and, in the `Place Actors/ Modes` window, search for `OWL360Livestreaming Cam Pawn`
-
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
-
-
-
-
-2. Select this item and drop it into your Unreal viewport. **N.B. You can only place one 360 camera in your level at any given time but you can teleport the camera using blueprints (ask us on discord if you need assistance).** Now: 
-3. In the `World Editor` window you can click on `OffWorldLive360Camera` as an `Actor` and change its settings in the `Details` panel.
-
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
-
-
-
-## Using in Unreal
-
-
-
-1. To use the camera you need to use the Unreal Game Mode. This is done with Settings -> World Settings -> GameMode Override -> OWLGameModeBase. If you are using the OWL game mode you can skip to Point 5.
+1. Open your `Unreal` `Project` and, in the `Place Actors` window, search for `OWL360Livestreaming Cam Pawn`, select it and drop it into your scene.
+![alt_text](images/360actor.jpg)
+2. To use the camera you need to use the Unreal Game Mode. This is done with Settings -> World Settings -> GameMode Override -> OWLGameModeBase. If you are using the OWL game mode you can skip to Point 5.
 2. If you have an existing GameMode class that you would like to use, you can change its parent to the OWLGameModeBase instead: Open your GameMode blueprint -> Class Settings -> Parent Class. Then follow the steps in 3 to ensure that the camera appears in your viewport
-
-
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](images/image6.png "image_tooltip")
-
-
-
-
 3. Now go to Class Defaults in your GameMode Blueprint and change HUD Class to HUDGlobal (our class) Player Controller Class to OWLPlayerController.
-
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](images/image7.png "image_tooltip")
-
-
-
-
 4. Now select your own GameMode in World Settings (as explained in Point 1).
 5. The camera is now active in the level and you need to authenticate your account to use it to output video. When you click `Play` in the Editor view, you will be requested to login to the Off World Live console (internet access required). 
-
-
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](images/image8.png "image_tooltip")
-
-
-
-
 6. Once you have logged in, the output of the 360 Camera will automatically appear in your viewport (which is now a WYSIWYG preview of the 360 output).
-
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](images/image9.png "image_tooltip")
+7. In the `World Editor` window you can click on `OffWorldLive360Camera` as an `Actor` and change its settings in the `Details` panel.
+![alt_text](images/image5.png "image_tooltip")
 
 
 
@@ -152,13 +60,7 @@ Adding the Plugin to your Unreal Project
 
 ### `Viewport`
 
-
 *   At runtime, the viewport transforms into a live WYSIWG preview of the 360 video output. 
-
-
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
 
 ![alt_text](images/image10.png "image_tooltip")
 
@@ -208,7 +110,7 @@ You can set the camera name as you would like it to appear as a source in output
 *   By default, the camera moves using the direction of the pawn as it is orientated in the level (not the direction of the viewport). 
 *   If you are controlling the camera live, check `View direction is forward` so the camera moves where you are looking towards in the viewport.
 
-### `Camera Movement`
+### Camera Movement
 
 The camera can be moved using the keyboard (the below preset keys can be customised in the details panel):
 
