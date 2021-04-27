@@ -11,7 +11,7 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 
 *N.B. This plugin only works for video sharing on a single GPU. For sharing over the network you will need to use a solution like [`NDI`](https://www.ndi.tv/sdk/).*
 
-## Download and Setup
+## Unreal Plugin Download and Setup
 
 ### Registration
 - To download the `Livestreaming Toolkit` you need to `Register`.
@@ -47,16 +47,16 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 ![Off World Icon](./images/validated.jpg)
 
 
-## Toolkit Overview
+## Toolkit Overview and Setup
 
 There are three main components to the toolkit:
 1. The `OWL Cinecam` which allows you to output an `Unreal` `Cinecam` to a `Render Target` for use with the `Spout Sender Manager` or as a replacement for `Unreal`'s `Scene Capture 2D` `Actor` (see the benefits of this below).
 2. The `Spout Sender Manager` which allows you to live-stream any `Unreal` `Render Target` to `OBS Studio` or any other `Spout` compatible program.
 2. The `Spout Receiver Manager` which allows you to receive any real-time video feeds from and `Spout` compatible program in `Unreal`.
 
-## OWL Cinecam
+### OWL Cinecam
 
-### Overview
+#### Overview
 
 - The `OWL Cinecam` is a modified `Unreal` `Cinecam` that combines the best features of the `Unreal` `Ci necam` and `Scene Capture 2D`: 
     - It uses the `Unreal` `Viewport` rendering pipeline which means it will output exactly the same colours as your `Viewport`. 
@@ -65,7 +65,7 @@ There are three main components to the toolkit:
     - It  integrates useful `Scene Capture 2D` features like `Alpha` and `Resolution`.
     - It outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to live-stream video.
 
-### Installation
+#### Installation
 - Please install as follows:
 1. Find the `OWLCine Cam Capture` `Actor` in the `Place Actors` panel and drag it into your scene.
 ![OWL Cinecam](images/owlcinecamactor.jpg)
@@ -78,15 +78,15 @@ There are three main components to the toolkit:
 5. You will now see your `Render Target` connected to your `OWL Cinecam`
 ![OWL Cinecam Render Target Complete](images/cinerender.jpg) 
 
-## Spout Sender Manager
+### Spout Sender Manager
 
-### Overview
+#### Overview
 
 - The `Spout Sender Manager` is an `Unreal` `Actor` that you use to manage different real-time `Spout` video ouputs from `Unreal`. 
 - It allows you to output any `Render Target` from `Unreal` to `Spout` (such as those from `OWL Cinecam` or `Composure`)
 - It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
 
-### Installation
+#### Installation
 - Please install as follows:
 
 1. Find the `OWLSpoutSenderManager` `Actor` in the `Place Actors`panel and drag it into your scene.
@@ -103,16 +103,16 @@ There are three main components to the toolkit:
 4. To stream multiple cameras, just add additional `Array Elements`.
 5. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
 
-## Spout Receiver Manager
+### Spout Receiver Manager
 
-### Overview
+#### Overview
 
 - The `Spout Receiver Manager` is an `Unreal` `Actor` that you use to manage different real-time `Spout` video inputs to `Unreal`. 
 - Inputs are managed as `Render Targets` in the same way as the `Spout Sender Manager`
 - You need to create a `Material` from your `Render Target` to add the video input to `Actors` in your scene (explained below).
 - It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
 
-### Installation
+#### Installation
 - Please install as follows:
 
 1. Find the `OWLSpoutReceiverManager` `Actor` in the `Place Actors`panel and drag it into your scene.  
