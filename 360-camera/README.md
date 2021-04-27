@@ -7,7 +7,9 @@ It is compatible with `DirectX11` and `DirectX12` (for ray-tracing) and has a cu
 
 Video tutorials for installing and using the camera [can be found here](https://www.youtube.com/playlist?list=PLElT6SIg9JnC3ejNkhM4QofbkoXKHkuKQ)
 
-## Email Registration
+## Setup
+
+### Email Registration
 
 1. When you select to `Download Plugin` you will be asked to register your email.
 ![360 Download](./images/360download.jpg)
@@ -20,7 +22,7 @@ Video tutorials for installing and using the camera [can be found here](https://
 5. Please select the plugin you want to download.
 ![360 Download List](./images/360page.jpg)
 
-## Unreal Installation
+### Unreal Installation
 
 1. Find the plugin in your `Downloads` folder and unzip. 
 2. Ensure that all instances of your `Unreal Project` are closed.
@@ -29,15 +31,8 @@ Video tutorials for installing and using the camera [can be found here](https://
 5. When installed correctly, the folder structure should read [`Myproject`]/`Plugins`/`OWL360LivestreamingCamera`]
 ![](images/filestructure360.jpg)
 
-## SPOUT Plugin for OBS
 
-In order to stream the output from `Unreal Engine` to the Internet:
-
-1. [Install `OBS Studio`](https://obsproject.com/download)
-2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
-3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
-
-## Unreal Configuration
+### Unreal Configuration
 
 1. Open your `Unreal` `Project` and, in the `Place Actors` window, search for `OWL360Livestreaming Cam Pawn`, select it and drop it into your scene.
 ![360 Actor](images/360actor.jpg)
@@ -49,13 +44,21 @@ In order to stream the output from `Unreal Engine` to the Internet:
 ![Own Game Mode Class](images/360owngamemode.png)
 4. Ensure that whatever `GameMode` you were previously using is selected in `World Settings` (as explained in Point 1).
 
-## Account Authentication
+### Account Authentication
 
 1. The `360 Camera` is now active in the level and you need to authenticate your account to use it to output video. 
 2. When you click `Play` in the `Editor` view, you will be requested to login to the `Off World Live` console (internet access required). 
 ![360 Login](images/360login.png)
 3. Once you have logged in, `at Runtime` the output of the `360 Camera` will automatically appear in your `Viewport` (which is now a `WYSIWYG` preview of the 360 output).
 ![360 Viewport](images/360viewport.png)
+
+## SPOUT Plugin for OBS
+
+In order to stream the output from `Unreal Engine` to the Internet:
+
+1. [Install `OBS Studio`](https://obsproject.com/download)
+2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
+3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
 
 ## 360 Camera Features
