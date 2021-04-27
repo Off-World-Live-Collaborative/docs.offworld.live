@@ -3,7 +3,7 @@
 
 This plugin enables you to live-stream a 360 degree video output from `Unreal Engine` `at-Runtime` to any [`Spout` receiver program](https://spout.zeal.co/) including [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin)
 
-It is compatible with `DirectX11` and `DirectX12` (for ray-tracing) and has a custom 360 degree `Bloom` post-processing algorithm/ pipeline for seamless `Bloom` in 360 degrees.
+It is compatible with `DirectX11` and `DirectX12` (for `Ray-Tracing`) and has a custom 360 degree `Bloom` `Post-Processing` algorithm for `Seamless 360 Bloom`.
 
 Video tutorials for installing and using the camera [can be found here](https://www.youtube.com/playlist?list=PLElT6SIg9JnC3ejNkhM4QofbkoXKHkuKQ)
 
