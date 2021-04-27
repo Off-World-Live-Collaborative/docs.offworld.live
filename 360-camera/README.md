@@ -7,7 +7,7 @@ It is compatible with `DirectX11` and `DirectX12` (for ray-tracing) and has a cu
 
 Video tutorials for installing and using the camera [can be found here](https://www.youtube.com/playlist?list=PLElT6SIg9JnC3ejNkhM4QofbkoXKHkuKQ)
 
-## Setup
+## Download and Setup
 
 ### Email Registration
 
