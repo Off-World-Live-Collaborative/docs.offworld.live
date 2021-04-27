@@ -52,15 +52,6 @@ Video tutorials for installing and using the camera [can be found here](https://
 3. Once you have logged in, `at Runtime` the output of the `360 Camera` will automatically appear in your `Viewport` (which is now a `WYSIWYG` preview of the 360 output).
 ![360 Viewport](images/360viewport.png)
 
-## SPOUT Plugin for OBS
-
-In order to stream the output from `Unreal Engine` to the Internet:
-
-1. [Install `OBS Studio`](https://obsproject.com/download)
-2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
-3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
-
-
 ## 360 Camera Features
 
 ### WYSIWYG 360 Viewport
@@ -166,6 +157,14 @@ In order to stream the output from `Unreal Engine` to the Internet:
     b. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific `GPU`.
 3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
 4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
+
+## SPOUT Plugin for OBS
+
+In order to stream the output from `Unreal Engine` to the Internet:
+
+1. [Install `OBS Studio`](https://obsproject.com/download)
+2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
+3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
 ## Streaming in 360 from OBS
 

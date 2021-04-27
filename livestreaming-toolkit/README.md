@@ -11,6 +11,9 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 
 *N.B. This plugin only works for video sharing on a single GPU. For sharing over the network you will need to use a solution like [`NDI`](https://www.ndi.tv/sdk/).*
 
+## Registration
+- To download the `Livestreaming Toolkit` you need to `Register`.
+- Simply input your email address and you will receive an invitation to download
 
 ## Plugin Download
 
@@ -21,14 +24,6 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 2. You will be asked if you want to accept the plugin invitation.
 ![Accept Invite](./images/acceptinvite.jpg)
 3. Please accept 
-
-### OBS-to-SPOUT Plugin
-
-In order to stream the output from `Unreal Engine` to the Internet:
-
-1. [Install `OBS Studio`](https://obsproject.com/download)
-2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
-3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
 
 ## Plugin Installation
@@ -301,11 +296,19 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 - If your video feed does not automatically appear in your desired program it is normally because either `Sender` or `Receiver` has an issue.
 - You can troubleshoot `Spout` using the tips below:
 1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
-2. Ensure that Unreal and your other program are running on the same GPU (this is an issue with some laptops). To deal with this:
-    a. Check Windows `Task Manager` to see which GPU your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
+2. Ensure that `Unreal` and your other program are running on the same `GPU` (this is an issue with some laptops). To deal with this:
+    a. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
     b. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
 3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
 4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
+
+## SPOUT Plugin for OBS
+
+In order to stream the output from `Unreal Engine` to the Internet:
+
+1. [Install `OBS Studio`](https://obsproject.com/download)
+2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
+3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
 
 ## Performance Optimisation 
 
