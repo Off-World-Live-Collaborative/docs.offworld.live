@@ -63,7 +63,7 @@ In order to stream the output from `Unreal Engine` to the Internet:
 
 ## 360 Camera Features
 
-### Viewport
+### WYSIWYG 360 Viewport
 
 -   `At runtime`, the `Viewport` transforms into a live `WYSIWG preview` of the 360 video output. 
 -   You can use the mouse to move the orientation of the viewport.
