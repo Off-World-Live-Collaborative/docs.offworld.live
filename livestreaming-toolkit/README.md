@@ -293,6 +293,23 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 -  Step-by-step instructions for how to setup the `Vcam` component can be [found here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html).
 - For more information on how to set up `Live Link` to control the `Vcam` with external devices such as your `Iphone` [see the guidance here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html).
 
+## Performance Optimisation 
+
+### GPU Usage Optimisation
+- Each `Active` `Render Target` creates a new video feed that has to be rendered from `Unreal` and so uses a lot of GPU power.
+- Since `Spout` is zero-latency, a number of tricks can be used for live-editing between different cameras in a seamless way (all of these can be configured via `Blueprints` for control via `OSC` or external devices):
+1. Use the `Pause` tickbox on the `OWL Cinecam` for any static camera that you want to see the location of (for live-editing) but you don't need to have running until you select it as your main camera.
+2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the `Render Target` when you need it (`Paused` and `Active` will show a static image as above).
+3.  Use `Blueprints` to output a reduced `Resolution` for any moving camera that you need to see output from and then automatically increase the `Resolution` to your broadcast requirements when it is selected as your main camera.
+4.  Use a single `OWL Cinecam` but place `Waypoints` in your scene of your different camera angles and then use `Blueprints` to 'teleport' your camera between those different locations live.
+
+### CPU Usage Optimisation
+
+- You may find that your stream slows down when you have OBS rather than Unreal running in the foreground on your computer.   
+- To avoid this, in `Editor Preferences` in `Unreal`, please ensure that the `Use Less CPU when in Background` box below is unticked as in the image below:
+![Use Less CPU](images/uselesscpu.jpg) 
+
+
 ## Troubleshooting Spout
 
 - [`Spout`](https://spout.zeal.co/) is the solution used by the plugin to share video textures between `Unreal` and other programs.
@@ -313,24 +330,6 @@ In order to stream the output from `Unreal Engine` to the Internet:
 1. [Install `OBS Studio`](https://obsproject.com/download)
 2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
 3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
-
-## Performance Optimisation 
-
-### GPU Usage Optimisation
-- Each `Active` `Render Target` creates a new video feed that has to be rendered from `Unreal` and so uses a lot of GPU power.
-- Since `Spout` is zero-latency, a number of tricks can be used for live-editing between different cameras in a seamless way (all of these can be configured via `Blueprints` for control via `OSC` or external devices):
-1. Use the `Pause` tickbox on the `OWL Cinecam` for any static camera that you want to see the location of (for live-editing) but you don't need to have running until you select it as your main camera.
-2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the `Render Target` when you need it (`Paused` and `Active` will show a static image as above).
-3.  Use `Blueprints` to output a reduced `Resolution` for any moving camera that you need to see output from and then automatically increase the `Resolution` to your broadcast requirements when it is selected as your main camera.
-4.  Use a single `OWL Cinecam` but place `Waypoints` in your scene of your different camera angles and then use `Blueprints` to 'teleport' your camera between those different locations live.
-
-
-### CPU Usage Optimisation
-
-- You may find that your stream slows down when you have OBS rather than Unreal running in the foreground on your computer.   
-- To avoid this, in `Editor Preferences` in `Unreal`, please ensure that the `Use Less CPU when in Background` box below is unticked as in the image below:
-![Use Less CPU](images/uselesscpu.jpg) 
-
 
 ## Technical Considerations
 
