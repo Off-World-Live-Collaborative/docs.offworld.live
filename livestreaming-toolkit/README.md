@@ -4,13 +4,13 @@
 This plugin enables you to send and receive live-stream video to/from `Unreal Engine` to/from [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin) or [other programs](https://spout.zeal.co/) with no computational overhead, compression or latency. 
 
 It has three main components (more details below):
-1. `OWL Cinecam` which combines the `Unreal` `Cinecam` and `Scene Capture 2D` components into a single `Actor`.
+1. `OWL Cinecam` which combines `Cinecam` features with `Scene Capture` features and outputs to a `Render Target`.
 2. `Spout Sender Manager` which allows you to output multiple `Render Targets` to `Spout`.
 3. `Spout Receiver Manager` which allows you to input multiple `Spout` video feeds as `Render Targets`.
 
 It works both `in-Editor` and `at Runtime` and is compatible with both `DirectX11` and `DirectX12` (for ray-tracing).
  
-It works with `Unreal` tools such as: `Cinecam`, `Composure`, `DLSS`, `Virtual Camera`, `Livelink`, `Metahumans` etc.
+It works with `Unreal` tools such as: `Cinecam`, `Composure`, `DLSS`, `Virtual Camera`, `Livelink` etc.
 
 For support, [please get in touch on our `Discord` channel.](https://discord.gg/2PaMtnK)
 
