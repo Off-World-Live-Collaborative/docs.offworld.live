@@ -11,13 +11,13 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 
 *N.B. This plugin only works for video sharing on a single GPU. For sharing over the network you will need to use a solution like [`NDI`](https://www.ndi.tv/sdk/).*
 
-## Registration
+## Download and Setup
+
+### Registration
 - To download the `Livestreaming Toolkit` you need to `Register`.
 - Simply input your email address and you will receive an invitation to download
 
-## Plugin Download
-
-### Unreal Plugin
+### Download
 
 1. You will receive an email invitation to download the plugin. Click the `Accept Invitation` link and you will be taken to the `Registration`/ `Download` page.
 ![Alpha Email](./images/alphaemail.jpg)
@@ -25,10 +25,9 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 ![Accept Invite](./images/acceptinvite.jpg)
 3. Please accept 
 
+### Installation
 
-## Plugin Installation
-
-### Add the Plugin to your Unreal Project
+#### Add the Plugin to your Unreal Project
 
 
 1. Ensure that all instances of your `Unreal` project are closed and that you are connected to the internet.
@@ -38,7 +37,7 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 ![Copy the plugin folder](./images/CopyPluginFolder.jpg)
 4. When installed correctly, the folder structure should read `Project`/`Plugins`/`OWLLivestreamingToolkit`.
 
-### Sign in to Off World Live
+#### Sign in to Off World Live
 
 1. Open your `Unreal` project and you will see an `Off World Live` icon above your `Viewport`. Click it and you will be taken to login.
 ![Off World Icon](./images/login.jpg)
