@@ -70,7 +70,7 @@ In order to stream the output from `Unreal Engine` to the Internet:
 -   The bottom central disc shows the camera orientation and can be clicked to return to your original position.
 ![360 View](images/360view.png)
 
-### Colour/ Visual Output Adjustments
+### Colour Adjustments
 
 -  The `360 Camera` uses the `Scene Capture 2D` rendering pipeline and so will have some colour differences from your `Viewport`. 
 - The `360 Viewport` that appears `at Runtime` is colour correct (`WYSIWYG`) and so should be used to make colour adjustments and test your visual output. 
