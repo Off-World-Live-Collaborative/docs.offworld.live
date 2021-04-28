@@ -1,7 +1,7 @@
 # Unreal Engine 360 degree Livestreaming Camera
 
 
-This plugin enables you to live-stream a `360 degree video` output from `Unreal Engine` `at-Runtime` to any [`Spout` receiver program](https://spout.zeal.co/) including [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin)
+This plugin enables you to live-stream a `360 degree video` output from [Unreal Engine](https://www.unrealengine.com/) `at-Runtime` to any [`Spout` receiver program](https://spout.zeal.co/) including [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin)
 
 It is compatible with `DirectX11` and `DirectX12` (for `Ray-Tracing`) and has a custom 360 degree `Bloom` `Post-Processing` algorithm for `Seamless 360 Bloom`.
 
@@ -26,17 +26,17 @@ Video tutorials for installing and using the camera [can be found here](https://
 
 1. Find the plugin in your `Downloads` folder and unzip. 
 2. Ensure that all instances of your `Unreal Project` are closed.
-3. If you do not have any `Plugins` installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
-4. If you already have `Plugins` in your project then copy the unzipped `OWL360LivestreamingCamera` folder into the existing `Plugins` folder in your `Project`.
+3. If you do not have any `Plugins` installed in your project then create a new `Plugins` folder in your Project folder and copy the unzipped plugin inside.
+4. If you already have `Plugins` in your project then copy the unzipped `OWL360LivestreamingCamera` folder into the existing `Plugins` folder in your Project.
 5. When installed correctly, the folder structure should read [`Myproject`]/`Plugins`/`OWL360LivestreamingCamera`]
 ![](images/filestructure360.jpg)
 
 
 ### Unreal Configuration
 
-1. Open your `Unreal` `Project` and, in the `Place Actors` window, search for `OWL360Livestreaming Cam Pawn`, select it and drop it into your scene.
+1. Open your Unreal Project and, in the `Place Actors` window, search for `OWL360Livestreaming Cam Pawn`, select it and drop it into your scene.
 ![360 Actor](images/360actor.jpg)
-2. To use the `360 Camera` you need to change the `Unreal` `GameMode`. 
+2. To use the `360 Camera` you need to change the Unreal `GameMode`. 
 3. Go to `Settings`>`World Settings`>`GameMode Override` and select `OWLGameModeBase`. 
 4. If you are using this `OWL Gamemode` you can skip to Point 7, if you are using your own `GameMode` please follow points 5 & 6 below.
 ![360 Game Mode Base](images/360gamemodebase.jpg)
@@ -51,21 +51,21 @@ Video tutorials for installing and using the camera [can be found here](https://
 1. The `360 Camera` is now active in the level and you need to authenticate your account to use it to output video. 
 2. When you click `Play` in the `Editor` view, you will be requested to login to the `Off World Live` console (internet access required). 
 ![360 Login](images/360login.png)
-3. Once you have logged in, `at Runtime` the output of the `360 Camera` will automatically appear in your `Viewport` (which is now a `WYSIWYG` preview of the 360 output).
+3. Once you have logged in, `at Runtime` the output of the `360 Camera` will automatically appear in your Viewport (which is now a `WYSIWYG` preview of the 360 output).
 ![360 Viewport](images/360viewport.png)
 
 ## 360 Camera Features
 
 ### WYSIWYG 360 Viewport
 
--   `At runtime`, the `Viewport` transforms into a live `WYSIWG preview` of the 360 video output. 
+-   `At runtime`, the Viewport transforms into a live `WYSIWG preview` of the 360 video output. 
 -   You can use the mouse to move the orientation of the viewport.
 -   The bottom central disc shows the camera orientation and can be clicked to return to your original position.
 ![360 View](images/360view.png)
 
 ### Colour Adjustments
 
--  The `360 Camera` uses the `Scene Capture 2D` rendering pipeline and so will have some colour differences from your `Viewport`. 
+-  The `360 Camera` uses the `Scene Capture 2D` rendering pipeline and so will have some colour differences from your Viewport. 
 - The `360 Viewport` that appears `at Runtime` is colour correct (`WYSIWYG`) and so should be used to make colour adjustments and test your visual output. 
 - In order to save your selections `at Runtime`, right click the `OWL360 Camera` in `World Outliner` and select `Keep Simulation Changes`. 
 - When you leave `Runtime` (press `Stop`) your changes will be retained.
@@ -97,16 +97,16 @@ Video tutorials for installing and using the camera [can be found here](https://
 
 ### Seamless 360 Bloom
 
--   There is a custom `Seamless 360 Bloom` post-processing effect which is seamless for 360 content but does not pass through the `Unreal` `Tonemapper`.  
-- To compensate for missing the `Tonemapper` you need to make colour adjustments to create the same visual output as the `Unreal` `bloom`. 
+-   There is a custom `Seamless 360 Bloom` post-processing effect which is seamless for 360 content but does not pass through the Unreal `Tonemapper`.  
+- To compensate for missing the `Tonemapper` you need to make colour adjustments to create the same visual output as the Unreal `bloom`. 
 - If you don't need `bloom` in your content then you can select the standard `Tonemapper` rendering pipeline.
 ![360 Bloom](images/360bloom.png)
 
 ### View Orientation and Camera Motion
 
--   The default `360 Camera` movement is as a `Pawn` in `Unreal` (only moves when direction buttons are being pressed). 
+-   The default `360 Camera` movement is as a _Pawn_ in Unreal (only moves when direction buttons are being pressed). 
 -   There is also a checkbox for `Cinematic Movement` where the camera can be set to move at a constant pace in a certain direction.
--   If you are controlling the camera live, check `View Direction is Forward` so the camera moves where you are looking towards in the `Viewport`.
+-   If you are controlling the camera live, check `View Direction is Forward` so the camera moves where you are looking towards in the Viewport.
 -   `Ease time`, `Increments`, `Max speed` and `Rotation` speed can also be set.
 ![360 Motion ](images/360motion.png)
 
@@ -127,7 +127,7 @@ Video tutorials for installing and using the camera [can be found here](https://
 ### Post Process Volumes
 
 -   There is a bespoke `Post-Process volume` for the `360 camera`. 
--   This can be added as a separate `Actor` from the `Place Actors` panel.
+-   This can be added as a separate Actor from the `Place Actors` panel.
 -   The `360 Post Process Volume` includes all `Post-Processing` settings that are available for the `360 camera`.
 -   Existing post process volumes should be double-checked in the `360 Viewport` as certain settings are disabled automatically to ensure the proper functioning of the `360 Camera`.
 ![360 PPV](images/360ppv.png)
@@ -144,25 +144,25 @@ Video tutorials for installing and using the camera [can be found here](https://
 ### GPU Usage in Unreal
 
 - The `360 Camera` is graphically intensive so more powerful graphics cards are required to deliver high resolution output at high frame rates.
-- For the highest performance, it is recommended to shrink the `Resolution` of the `Unreal` `Viewport` to the smallest tolerable (this will not affect the output of the camera but will reduce the rendering required from the Engine.)
+- For the highest performance, it is recommended to shrink the `Resolution` of the Unreal Viewport to the smallest tolerable (this will not affect the output of the camera but will reduce the rendering required from the Engine.)
 
 
 ## Troubleshooting Spout
 
-- [`Spout`](https://spout.zeal.co/) is the solution used by the plugin to share video textures between `Unreal` and other programs.
+- [`Spout`](https://spout.zeal.co/) is the solution used by the plugin to share video textures between Unreal and other programs.
 - There will always be a `Spout Sender` which is the program outputting the video and a `Spout Receiver` which is the program receiving the video.
 - If your video feed does not automatically appear in your desired program it is normally because either `Sender` or `Receiver` has an issue.
 - You can troubleshoot `Spout` using the tips below:
     1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
-    2. Ensure that `Unreal` and your other program are running on the same GPU (this is an issue with some laptops). To deal with this:
+    2. Ensure that Unreal and your other program are running on the same GPU (this is an issue with some laptops). To deal with this:
     a. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
     b. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific `GPU`.
     3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
-    4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
+    4. For any other issues [contact us on Discord](https://discord.gg/2PaMtnK)
 
 ## SPOUT Plugin for OBS
 
-In order to stream the output from `Unreal Engine` to the Internet:
+In order to stream the output from [Unreal Engine](https://www.unrealengine.com/) to the Internet:
 
 1. [Install `OBS Studio`](https://obsproject.com/download)
 2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 

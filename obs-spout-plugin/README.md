@@ -109,7 +109,7 @@ Open `OBS` and add `Spout2 Capture` to your `Sources` as follows:
     4. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
     5.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
     6. For outputs to `OBS` on certain laptops you may also need to change your `OBS` settings [here.](https://obsproject.com/wiki/Laptop-Troubleshooting)
-    7. For any other issues [contact us on `Discord`.](https://discord.gg/2PaMtnK)
+    7. For any other issues [contact us on Discord.](https://discord.gg/2PaMtnK)
 
 
 

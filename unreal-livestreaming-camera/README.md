@@ -16,8 +16,8 @@ Video tutorials for using the camera`s various special features can be found [he
 
 ### Adding the Plugin to your Unreal Project
 
-1. Ensure that all instances of your `Unreal` `Project` are closed.
-2. If you do not have any `Plugins` installed in your project then create a new `Plugins` folder in your `Project` folder and copy the unzipped plugin inside.
+1. Ensure that all instances of your Unreal Project are closed.
+2. If you do not have any `Plugins` installed in your project then create a new `Plugins` folder in your Project folder and copy the unzipped plugin inside.
 ![New Plugin Folder](images/newpluginfolder.png)
 3. If you already have `Plugins` in your project then copy-paste the `OWL_LivestreamingCamera` folder into your existing `Plugins` folder.
 ![Plugin Folder](images/pluginfolder.png)
@@ -25,7 +25,7 @@ Video tutorials for using the camera`s various special features can be found [he
 
 ## Camera Setup
 
-1. Open your `Project` and in the `Place Actors` window, search for `OWLLivestreamingCamera` drop it into your `Unreal` scene.
+1. Open your Project and in the `Place Actors` window, search for `OWLLivestreamingCamera` drop it into your Unreal scene.
 ![Live Cam Actor](images/livecamactor.png)
 2. `At Runtime` (when you press `Play`) the camera will automatically start streaming to `Spout`.
 ![Spout on Play](images/spoutatplay.png)
@@ -77,7 +77,7 @@ Video tutorials for using the camera`s various special features can be found [he
 2. Select your `OWLLivestreamingCamera` in `World Outliner` and in it's `Details` panel find the section called `Scene Capture` and:
     1. Set `Consider Unrendered Opaque Pixel as Fully Translucent` to `True`
     2. Set `Primitive Render Mode` to `Use ShowOnly List`
-    3. Go to the `Show Only Actors` list and create an `array element` for each `Actor` you want to send in your `alpha channel` (you can select these either from the drop down list or using the colour picker in your `Viewport`).
+    3. Go to the `Show Only Actors` list and create an `array element` for each Actor you want to send in your `alpha channel` (you can select these either from the drop down list or using the colour picker in your Viewport).
     ![Use Show Only](images/useshowonly.png)
 3. If you don't have a `Post Process Volume` in your scene then [follow these instructions](https://subscription.packtpub.com/book/game_development/9781784391966/4/ch04lvl1sec24/adding-post-process) to add one. Then:
     1. Select your `Post Process Volume` in `World Outliner`.
@@ -96,61 +96,61 @@ Video tutorials for using the camera`s various special features can be found [he
 
 ## Unreal Spout Receiver
 
-- The `Spout Receiver` will allow you to input live video feeds from other `Spout` programs to `Unreal`
+- The `Spout Receiver` will allow you to input live video feeds from other `Spout` programs to Unreal
 - You can watch a setup video [here](https://www.youtube.com/watch?v=eRuxlOgTN9E).
 - To setup please:
-1. Open your `Unreal` `Project` and, in the `Place Actors` window, search for the `OWLSpout Receiver` `Actor`and drag and drop the `Actor` into your scene (you can add multiple if you need).
+1. Open your Unreal Project and, in the `Place Actors` window, search for the `OWLSpout Receiver` Actor and drag and drop the Actor into your scene (you can add multiple if you need).
 ![Spout Receiver](images/spoutreceiver.png)
 2. Create a `Render Target` to receive the `Spout` input:
-    1. In Content Browser add a new `Render Target` by selecting: `Add/Import`>`Materials & Textures`>`Render Target`.
-    2. Give your `Render Target` a name.
+    1. In Content Browser add a new Render Target by selecting: `Add/Import`>`Materials & Textures`>`Render Target`.
+    2. Give your Render Target a name.
     ![Receiver Render Target](images/receiverrendert.png)
 3. Select your `Spout Receiver` in `World Outliner` and in the `Details panel` go to `Off World Live SPOUT Receiver Settings` and:
     1. Click `Receiver Active` to `True`
-    2. Select your newly created `Render Target` from step 2.1 from the drop-down list.
+    2. Select your newly created Render Target from step 2.1 from the drop-down list.
     3. Input the **EXACT** name of your `Spout` sender (as it is called in your external programme) into the `Receiver Name` field. (If the name is not the same the video feed won't appear).
     ![Receiver Settings](images/receiversettings.png)
-5. Create a `Material` from your `Render Target` and add it toelements in your level:
-    1. Right click on your `Spout` `Render Target` in `Content Browser` (which you previously created above) and choose `Create Material`.
+5. Create a `Material` from your Render Target and add it toelements in your level:
+    1. Right click on your `Spout` Render Target in `Content Browser` (which you previously created above) and choose `Create Material`.
     ![Receiver Material](images/receivermaterial.png)
-    2. Drag the newly created `Material` (which will be called the same as your `Render Target`) onto the element/s in your level on which you would like to show your video texture.
+    2. Drag the newly created `Material` (which will be called the same as your Render Target) onto the element/s in your level on which you would like to show your video texture.
     ![Drag Material](images/dragmaterial.png)
 
 
 ## Performance Optimisation 
 
 ### GPU Usage Optimisation
-- Each `Active` `Render Target` creates a new video feed that has to be rendered from `Unreal` and so uses a lot of GPU power.
+- Each `Active` Render Target creates a new video feed that has to be rendered from Unreal and so uses a lot of GPU power.
 - Since `Spout` is zero-latency, a number of tricks can be used for live-editing between different cameras in a seamless way (all of these can be configured via `Blueprints` for control via `OSC` or external devices):
     1. Use the `Pause` tickbox on the `OWL Cinecam` for any static camera that you want to see the location of (for live-editing) but you don't need to have running until you select it as your main camera.
-    2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the `Render Target` when you need it (`Paused` and `Active` will show a static image as above).
+    2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the Render Target when you need it (`Paused` and `Active` will show a static image as above).
     3.  Use `Blueprints` to output a reduced `Resolution` for any moving camera that you need to see output from and then automatically increase the `Resolution` to your broadcast requirements when it is selected as your main camera.
     4.  Use a single `OWL Cinecam` but place `Waypoints` in your scene of your different camera angles and then use `Blueprints` to 'teleport' your camera between those different locations live.
 
 ### CPU Usage Optimisation
 
 - You may find that your stream slows down when you have OBS rather than Unreal running in the foreground on your computer.   
-- To avoid this, in `Editor Preferences` in `Unreal`, please ensure that the `Use Less CPU when in Background` box below is unticked as in the image below:
+- To avoid this, in `Editor Preferences` in Unreal, please ensure that the `Use Less CPU when in Background` box below is unticked as in the image below:
 ![Use Less CPU](images/uselesscpu.jpg) 
 
 
 ## Troubleshooting Spout
 
-- [`Spout`](https://spout.zeal.co/) is the solution used by the plugin to share video textures between `Unreal` and other programs.
+- [`Spout`](https://spout.zeal.co/) is the solution used by the plugin to share video textures between Unreal and other programs.
 - There will always be a `Spout Sender` which is the program outputting the video and a `Spout Receiver` which is the program receiving the video.
 - If your video feed does not automatically appear in your desired program it is normally because either `Sender` or `Receiver` has an issue.
 - You can troubleshoot `Spout` using the tips below:
     1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
-    2. Ensure that `Unreal` and your other program are running on the same `GPU` (this is an issue with some laptops). To deal with this:
+    2. Ensure that Unreal and your other program are running on the same `GPU` (this is an issue with some laptops). To deal with this:
     3. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
     4. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
     5.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
-    6. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
+    6. For any other issues [contact us on Discord](https://discord.gg/2PaMtnK)
 
 
 ## SPOUT Plugin for OBS
 
-In order to stream the output from `Unreal Engine` to the Internet:
+In order to stream the output from [Unreal Engine](https://www.unrealengine.com/) to the Internet:
 
 1. [Install `OBS Studio`](https://obsproject.com/download)
 2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
