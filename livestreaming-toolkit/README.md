@@ -101,10 +101,10 @@ There are three main components to the toolkit:
 3. In your `Details` panel add a `Spout Sender` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its `Members` (there are 4). 
 ![Spout Sender Array](./images/senderarray.jpg)
 - You need to:
-    a.  Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in `OBS`/ your `Spout` receiver programme.
-    b. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured above or from another `Unreal` output.) 
-    c. Click the `Active` box to begin sending to `Spout`.
- ![Render Target](./images/rendertarget.jpg)
+    1.  Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in `OBS`/ your `Spout` receiver programme.
+    2. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured above or from another `Unreal` output.) 
+    3. Click the `Active` box to begin sending to `Spout`.
+    ![Render Target](./images/rendertarget.jpg)
 4. To stream multiple cameras, just add additional `Array Elements`.
 5. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
 
@@ -126,19 +126,19 @@ There are three main components to the toolkit:
 3. In your `Details` panel add a `Spout Receiver` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its `Members` (there are 3). 
 ![Spout Receiver Details Panel](./images/receiverarray.jpg)
 4. To receive your video input/s you need to:
-    a. In `Content Browser` add a new `Render Target` by selecting: `Add/Import`> `Materials & Textures` > `Render Target`.
-![Add new Render Target](images/addrendertarget.jpg "image_tooltip")
-    b. Give your `Render Target` a name so you can identify it from the drop-down list in the `Spout Sender` `Array`
- ![Name new Render Target](images/namerendertarget.jpg "image_tooltip")
-    c. Go back to your `Spout Receiver Manager` `Details` panel and select your newly added `Render Target` in your `Spout Receiver` `Array`
-![Select Render Target](images/selectrendertarget.jpg "image_tooltip")
-    d. Input the name of your `Spout Sender` video-feed. This needs to be **EXACTLY** the same as your `Spout Sender` in your external program otherwise it will not appear.
-    e. Click the `Active` box to begin receiving the video-feed from your external `Spout Sender` (you should automatically see your input in the `Render Target` thumbnail.)
-![Spout Receiver Thumbnail](images/senderthumbnail.jpg)
+    1. In `Content Browser` add a new `Render Target` by selecting: `Add/Import`> `Materials & Textures` > `Render Target`.
+    ![Add new Render Target](images/addrendertarget.jpg)
+    2. Give your `Render Target` a name so you can identify it from the drop-down list in the `Spout Sender` `Array`
+    ![Name new Render Target](images/namerendertarget.jpg)
+    3. Go back to your `Spout Receiver Manager` `Details` panel and select your newly added `Render Target` in your `Spout Receiver` `Array`
+    ![Select Render Target](images/selectrendertarget.jpg)
+    4. Input the name of your `Spout Sender` video-feed. This needs to be **EXACTLY** the same as your `Spout Sender` in your external program otherwise it will not appear.
+    5. Click the `Active` box to begin receiving the video-feed from your external `Spout Sender` (you should automatically see your input in the `Render Target` thumbnail.)
+    ![Spout Receiver Thumbnail](images/senderthumbnail.jpg)
 5. To add your video input/s to elements in your scene you need to:
-    a. Create a `Material` from your `Render Target`: Right click on the `Render Target` you created in `Content Browser` (step 4.a) and choose `Create Material`.
-![Create Material](images/rendermaterial.jpg)
-    b. Drag the newly created `Material` (which will be called the same as your `Render Target`) onto the elements in your level.
+    1. Create a `Material` from your `Render Target`: Right click on the `Render Target` you created in `Content Browser` (step 4.1) and choose `Create Material`.
+    ![Create Material](images/rendermaterial.jpg)
+    2. Drag the newly created `Material` (which will be called the same as your `Render Target`) onto the elements in your level.
 ![Drag Material](images/dragmaterial.jpg)
 6. To receive multiple input feeds, just add additional `Array Elements`.
 7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
@@ -228,22 +228,22 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 2. find `Enable alpha channel support` in `Engine - Rendering/ Postprocessing` and set it to `AllowThroughTonemapper` (you will be asked to restart your level).
 ![Allow Tonemapper](images/allowtonemapper.jpg)
 3. If you don’t have a `Post Process Volume` in your scene then [follow these instructions](https://subscription.packtpub.com/book/game_development/9781784391966/4/ch04lvl1sec24/adding-post-process) to add one. Then:
-    a. Select your `Post Process Volume` in `World Outliner`.
-    b. In its `Details` panel go to `Rendering Features`/ `Post Process Materials`/ `Array`.
-    c. Add a new `Array element` and select `Asset reference` from the drop down.
-    d. Search for and select `M_OwlAlpha`.
+    1. Select your `Post Process Volume` in `World Outliner`.
+    2. In its `Details` panel go to `Rendering Features`/ `Post Process Materials`/ `Array`.
+    3. Add a new `Array element` and select `Asset reference` from the drop down.
+    4. Search for and select `M_OwlAlpha`.
     ![OWLAlpha](images/owlalpha.jpg)
-    e. If `M_OwlAlpha` doesn’t appear in your list, go to `Content Browser`>  `View Options`> `Show Plugin Content` and then repeat.
+    5. If `M_OwlAlpha` doesn’t appear in your list, go to `Content Browser`>  `View Options`> `Show Plugin Content` and then repeat.
 4. Click on the `OWL Cinecam` in the `World Outliner` and go to its `Details` panel.
-    a. Using the `Hidden Actors` or `Show Only Actors` arrays select the `Actors` that you would like to show/ hide.
-    b. You can do this from the drop down list or using the picker to the left of the drop down list.
-    c. If you want to `Show Only Actors` then you need to also tick the `Use Show Only List` tick box.
+    1. Using the `Hidden Actors` or `Show Only Actors` arrays select the `Actors` that you would like to show/ hide.
+    2. You can do this from the drop down list or using the picker to the left of the drop down list.
+    3. If you want to `Show Only Actors` then you need to also tick the `Use Show Only List` tick box.
     ![Show/Hide](images/showhidelist.jpg)
 5. In `OBS Studio` (or your `Spout` receiver programme):
-    a. Click on your `SPOUT2 Capture` `Source`.
-    b. In the pop-up window for `Composite Mode` select `Premultiplied Alpha`.
+    1. Click on your `SPOUT2 Capture` `Source`.
+    2. In the pop-up window for `Composite Mode` select `Premultiplied Alpha`.
     ![OBS Alpha](images/obsalpha.jpg)
-    c. You should now see the `Actors` you have selected in Unreal as an alpha channel in `OBS Studio`/ your `Spout` receiver programme.
+    3. You should now see the `Actors` you have selected in Unreal as an alpha channel in `OBS Studio`/ your `Spout` receiver programme.
     ![OBS Alpha View](images/obsalphaview.jpg)
 
 
@@ -268,7 +268,7 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 ![CompRTarget](images/comprtarget.jpg)
 5. Name your `Output` and ensure it is `Enabled`
 ![CompNamed](images/compnamed.jpg)
-5. Now if you go to your `Spout Sender Manager`you can create a new `Array Element` using your new `Render Target` for your `Composure` output and stream it wherever you like.
+6. Now if you go to your `Spout Sender Manager`you can create a new `Array Element` using your new `Render Target` for your `Composure` output and stream it wherever you like.
 ![CompSender](images/compspoutsender.jpg)
 
 ## Unreal Virtual Camera
@@ -318,8 +318,8 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 - You can troubleshoot `Spout` using the tips below:
 1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
 2. Ensure that `Unreal` and your other program are running on the same `GPU` (this is an issue with some laptops). To deal with this:
-    a. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
-    b. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
+    1. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
+    2. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
 3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
 4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
 
@@ -337,9 +337,9 @@ In order to stream the output from `Unreal Engine` to the Internet:
 ### System Requirements
 
 
-*   Operating System: `Windows` 8 or later
-*   For ray-tracing, `RTX` (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
-*   Your `Windows` SDK should be updated to the latest version. Please use `Visual Studio` to check this (it should be at least above version 19XXX)
+--   Operating System: `Windows` 8 or later
+-   For ray-tracing, `RTX` (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
+-   Your `Windows` SDK should be updated to the latest version. Please use `Visual Studio` to check this (it should be at least above version 19XXX)
 
 
 ## Copyright
