@@ -19,8 +19,8 @@ For support, [please get in touch on our `Discord` channel.](https://discord.gg/
 ## Unreal Plugin Download and Setup
 
 ### Registration
-- To download the `Livestreaming Toolkit` you need to `Register`.
-- Simply input your email address and you will receive an invitation to download
+1. To download the `Livestreaming Toolkit` you need to `Register`.
+2. Simply input your email address and you will receive an invitation to download
 
 ### Download
 
@@ -63,7 +63,7 @@ There are three main components to the toolkit:
 
 #### Overview
 
-- The `OWL Cinecam` is a modified `Unreal` `Cinecam` that combines the best features of the `Unreal` `Ci necam` and `Scene Capture 2D`: 
+- The `OWL Cinecam` is a modified `Unreal` `Cinecam` that combines the best features of the `Unreal` `Cinecam` and `Scene Capture 2D`: 
     - It uses the `Unreal` `Viewport` rendering pipeline which means it will output exactly the same colours as your `Viewport`. 
     - It can be used with rendering optimisations such as `DLSS` and `TAAU`.
     - It benefits from `Cinecam` features such as `Depth of Field`, `Filmback` and `Post Processing`.
@@ -249,11 +249,12 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 
 ## DLSS & OWL Cinecam
 
-`DLSS` works with the `OWL CineCam` in all game targets (`PIE`, `Standalone`, `Packaged`) but not `in-Editor` (because of the `DLSS` implementation). You can configure it as follows:
-1. Ensure that you have the latest NVIDIA GeForce drivers [here](https://www.nvidia.com/drivers)
-2. Set up `DLSS` in your level by watching a [tutorial like this](https://www.youtube.com/watch?v=4JkHE48YptA)
-3. Use blueprints to set up a toggle for DLSS at runtime such as this: 
-![DLSS](images/dlss.png)
+- `DLSS` works with the `OWL CineCam` in all game targets (`PIE`, `Standalone`, `Packaged`) but not `in-Editor` (because of the `DLSS` implementation). 
+- You can setup `DLSS` as follows:
+    1. Ensure that you have the latest NVIDIA GeForce drivers [here](https://www.nvidia.com/drivers)
+    2. Set up `DLSS` in your level by watching a [tutorial like this](https://www.youtube.com/watch?v=4JkHE48YptA)
+    3. Use blueprints to set up a toggle for DLSS at runtime such as this: 
+    ![DLSS](images/dlss.png)
 
 
 ## Composure
@@ -298,10 +299,10 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 ### GPU Usage Optimisation
 - Each `Active` `Render Target` creates a new video feed that has to be rendered from `Unreal` and so uses a lot of GPU power.
 - Since `Spout` is zero-latency, a number of tricks can be used for live-editing between different cameras in a seamless way (all of these can be configured via `Blueprints` for control via `OSC` or external devices):
-1. Use the `Pause` tickbox on the `OWL Cinecam` for any static camera that you want to see the location of (for live-editing) but you don't need to have running until you select it as your main camera.
-2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the `Render Target` when you need it (`Paused` and `Active` will show a static image as above).
-3.  Use `Blueprints` to output a reduced `Resolution` for any moving camera that you need to see output from and then automatically increase the `Resolution` to your broadcast requirements when it is selected as your main camera.
-4.  Use a single `OWL Cinecam` but place `Waypoints` in your scene of your different camera angles and then use `Blueprints` to 'teleport' your camera between those different locations live.
+    1. Use the `Pause` tickbox on the `OWL Cinecam` for any static camera that you want to see the location of (for live-editing) but you don't need to have running until you select it as your main camera.
+    2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the `Render Target` when you need it (`Paused` and `Active` will show a static image as above).
+    3.  Use `Blueprints` to output a reduced `Resolution` for any moving camera that you need to see output from and then automatically increase the `Resolution` to your broadcast requirements when it is selected as your main camera.
+    4.  Use a single `OWL Cinecam` but place `Waypoints` in your scene of your different camera angles and then use `Blueprints` to 'teleport' your camera between those different locations live.
 
 ### CPU Usage Optimisation
 
@@ -316,12 +317,12 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 - There will always be a `Spout Sender` which is the program outputting the video and a `Spout Receiver` which is the program receiving the video.
 - If your video feed does not automatically appear in your desired program it is normally because either `Sender` or `Receiver` has an issue.
 - You can troubleshoot `Spout` using the tips below:
-1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
-2. Ensure that `Unreal` and your other program are running on the same `GPU` (this is an issue with some laptops). To deal with this:
-    1. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
-    2. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
-3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
-4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
+    1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
+    2. Ensure that `Unreal` and your other program are running on the same `GPU` (this is an issue with some laptops). To deal with this:
+    3. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
+    4. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
+    5.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
+    6. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
 
 ## SPOUT Plugin for OBS
 
@@ -333,13 +334,21 @@ In order to stream the output from `Unreal Engine` to the Internet:
 
 ## Technical Considerations
 
-
 ### System Requirements
 
-
---   Operating System: `Windows` 8 or later
+-   Operating System: `Windows` 8 or later
 -   For ray-tracing, `RTX` (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
 -   Your `Windows` SDK should be updated to the latest version. Please use `Visual Studio` to check this (it should be at least above version 19XXX)
+
+### Upload Speeds/ Resolutions
+
+- For live-streaming we recommend the following upload speeds (and associated `bitrate` in `OBS Studio`):
+
+    | Resolution | Minimum Upload Speed |
+    | ---| ---- |
+    |1080 |+7.5 mpbs |
+    |2K |+15 mpbs |
+    |4K |+30 mpbs |
 
 
 ## Copyright
