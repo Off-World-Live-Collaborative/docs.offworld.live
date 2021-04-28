@@ -41,7 +41,7 @@ For support, [please get in touch on our Discord channel.](https://discord.gg/2P
 2. If you do not have any plugins installed in your project then create a new `Plugins` folder in your Project folder and copy the unzipped plugin inside.
 ![Creating the plugin directory](./images/CreatePluginDir.jpg)
 3. If you already have `Plugins` in your project then open the `Plugins` folder to find the `OWLLivestreamingToolkit` folder and copy it into the existing `Plugins` folder in your Project.
-![Copy the plugin folder](./images/CopyPluginFolder.jpg)
+![Copy the plugin folder](./images/fileplugin.jpg)
 4. When installed correctly, the folder structure should read `Project/Plugins/OWLLivestreamingToolkit`.
 
 #### Sign in to Off World Live
