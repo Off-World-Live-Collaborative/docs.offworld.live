@@ -1,4 +1,4 @@
-# SPOUT OBS Plugin 
+# Spout Plugin for OBS Studio
 
 This plugin creates a `Spout` video intput source in `OBS Studio` from any Spout sender [program](https://spout.zeal.co/).
 
@@ -7,6 +7,8 @@ It enables high resolution, zero-compression, zero-latency, zero-computational o
 It enables you to send video in the background while retaining full control of your sender program viewport.
 
 A video tutorial for installing the plugin can be found [here.](https://www.youtube.com/watch?v=-AcauTS1V8k)
+
+For support, [please get in touch on our `Discord` channel.](https://discord.gg/2PaMtnK)
 
 N.B. This plugin only works for video sharing on a single GPU. For sharing over the network you will need to use a solution like [`NDI`](https://www.ndi.tv/sdk/).*
 
