@@ -275,25 +275,28 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 
 ## Unreal Virtual Camera
 - The Unreal `Virtual Camera`allows you to control your `OWL Cinecam` from an external device such as an `Iphone` via the `ARKit` plugin.
-- To do so, you need to attach the `Virtual Camera` _Pawn_ to your `OWL Cinecam` then you need to configure your `Virtual Camera` pawn to work with `Live Link` (to be controlled by an external input).
-- Guidance for how to setup the `Virtual Camera` can be found [here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html) and [here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html) (more details below).
-- You can also use the Unreal `Virtual Camera Actor`([see instructions here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraActorQuickStart/index.html)) to output a Render Target directly to the `Spout Sender Manager` but this uses the `Scene Capture 2D` rendering pipeline, so the `OWL Cinecam` offers a better image quality.
+- There are different ways to use the `Virtual Camera` with the `Livestreaming Toolkit` as below.
 
-### Attaching the Virtual Camera to the OWL Cinecam
+1. You can output from the `Unreal` `Virtual Camera Actor` [(described here)](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraActorQuickStart/index.html) via a `Render Target` to the `Spout Sender Manager`.
+    - The `Virtual Camera Actor` includes a `Render Target` as part of its `Scene Capture` component:
+    ![Vcam Scene Capture](images/vcamscenecap.jpg)
+    - This will enable you to have the `Virtual Camera` `HUD` in your external controller but not in your final output.
+    - However, it uses the `Scene Capture 2D` render pipeline and so will have colour differences to your `Viewport`
 
-- The `Virtual Camera` can be connected to the `OWL Cinecam` by using the `Vcam` pawn as follows:
-1. Select your `OWL Cinecam` in `World Outliner` and go to its  `Details` panel.
+2. You can attach the `Virtual Camera Component` to your `OWL Cinecam` [(described here)](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html).
+    - In this case you use the `Render Target` from the `OWL Cinecam` to output to the `Spout Sender Manager`.
+    - The benefit of this is that the image will automatically match what you see in your `Viewport` but the negative is that any `HUD` will show in your final output.
+    - To avoid this, select `None` in `Virtual Camera`>`Output Providers`>`Output`>`UMG Overlay`.
+    ![Vcam Scene Capture](images/vcamhud.jpg)
+3. The `Virtual Camera` can be connected to the `OWL Cinecam` by using the `Vcam` pawn as follows:
+    1. Select your `OWL Cinecam` in `World Outliner` and go to its  `Details` panel.
 ![OWL Cinecam Details](images/cinecamdetails.jpg)
-2. In the `Details` panel go to `+Add Component` and in the search box type `Vcam` and select this `Component`.
+    2. In the `Details` panel go to `+Add Component` and in the search box type `Vcam` and select this `Component`.
 ![Add Vcam Component](images/vcamcomp.jpg)
-3. Drag the `Vcam` `Component` on top of your `OWL Cinecam Capture Component` to attach it to your `OWL Cinecam` so that it is nested below.
-![Attach Vcam Component](images/attachvcam.jpg).
-4. Now, when your `Vcam` is configured (see links below), it will operate your `OWL Cinecam` and output video via its Render Target to the `Spout Sender Manager`.
-
-### Configuring the Virtual Camera
-
--  Step-by-step instructions for how to setup the `Vcam` component can be [found here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html).
-- For more information on how to set up `Live Link` to control the `Vcam` with external devices such as your `Iphone` [see the guidance here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html).
+    3. Drag the `Vcam` `Component` on top of your `OWL Cinecam Capture Component` to attach it to your `OWL Cinecam` so that it is nested below.
+![Attach Vcam Component](images/attachvcam.jpg)
+    4. Now, when your `Vcam` is configured (see links below), it will operate your `OWL Cinecam` and output video via its `Render Target` to the `Spout Sender Manager`.
+4. For more information on how to set up `Live Link` to control the `Vcam` with external devices such as your `Iphone` [see the guidance here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html).
 
 ## Performance Optimisation 
 
@@ -323,7 +326,8 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
     3. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
     4. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific GPU.
     5.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
-    6. For any other issues [contact us on Discord](https://discord.gg/2PaMtnK)
+    6. For outputs to `OBS` on certain laptops you may also need to change your `OBS` settings [here.](https://obsproject.com/wiki/Laptop-Troubleshooting)
+    7. For any other issues [contact us on `Discord`.](https://discord.gg/2PaMtnK)
 
 ## SPOUT Plugin for OBS
 
