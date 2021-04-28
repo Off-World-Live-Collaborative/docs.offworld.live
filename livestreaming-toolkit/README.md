@@ -18,17 +18,19 @@ For support, [please get in touch on our Discord channel.](https://discord.gg/2P
 
 ## Unreal Plugin Download and Setup
 
-### Registration
-1. To download the _Livestreaming Toolkit_ you need to Register.
-2. Simply input your email address and you will receive an invitation to download
+### Request Access
+1. To request access to the alpha, please complete the (very) short form [here](https://forms.clickup.com/f/2cqrr-1331/HMMLTQJM1Q9KSTQ9T0)
 
-### Download
+### Registration/ Download
 
 1. You will receive an email invitation to download the plugin. Click the `Accept Invitation` link and you will be taken to the _Registration_ /  _Download_ page.
 ![Alpha Email](./images/alphaemail.jpg)
-2. You will be asked if you want to accept the plugin invitation.
+2. Please accept the invitation to be taken to the Registration page.
 ![Accept Invite](./images/acceptinvite.jpg)
-3. Please accept 
+3. Please register the same email as you received your invitation to and select your preferences for marketing and Telemetry.
+![Manage page](./images/pluginmanage.jpg)
+4. Once you have registered, you will be taken to the download page.
+ ![Download page](./images/downloadpage.jpg)
 
 ### Installation
 
