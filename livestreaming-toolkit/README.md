@@ -149,13 +149,13 @@ There are three main components to the toolkit:
 
 ### General Features
 
-#### Render Texture Target:
+#### Render Texture Target
   
 - You can select the `Render Texture Target` that you want to attach to the `OWL Cinecam` using the drop-down as described above in `OWL Cinecam` step 3.
 - You can create multiple `Render Texture Targets` and use `Blueprints` to switch between then as required.
 ![Cinecam Render Target](images/ccrtarget.jpg)
 
-#### Resolution/ Aspect Ratio:
+#### Resolution/ Aspect Ratio
 
 - The `OWL Cinecam` has both a `Resolution` and an `Aspect Ratio`.
  ![Resolution and Aspect Ratio](images/resolutionaspect.jpg) 
@@ -171,13 +171,13 @@ There are three main components to the toolkit:
 - The `Clear Colour` settings can be used to change the default colour of the `Render Texture`  (e.g. if you want to send a green screen background for keying in `OBS Studio`).
 ![Clear Colour/ Gamma](images/clearcolour.jpg) 
 
-#### Pause Rendering:
+#### Pause Rendering
 
 -   This enables you to `Pause Rendering` on the `OWL Cinecam` which is useful for saving GPU power when using live-editing.
 -   This will stream a static/ paused image if `Pause Rendering` is selected in the `OWL Cinecam` `Details` panel and `Active` is selected in the `Spout Sender Manager` (for that `OWL Cinecam`). This is useful if you want to see the position of your different cameras but only render a live video-feed from a single camera at a time).
 ![Pause Rendering](images/pauserendering.jpg) 
 
-#### Use Show Only/ Hidden Actors:
+#### Use Show Only/ Hidden Actors
 
 
 -   `Show Only` is used to select specific `Actors` to appear in an alpha channel output.
@@ -185,12 +185,12 @@ There are three main components to the toolkit:
 -  Both require a post-process volume (see full guide below).
 ![Show Only/ Hidden Actors](images/showhide.jpg) 
 
-#### Max View Distance Override:
+#### Max View Distance Override
 
 -   This can be used to cull distant objects from a reflection.
 ![Max Distance](images/maxview.jpg) 
 
-#### Standard Cinecam Features:
+#### Standard Cinecam Features
 
 -   The `OWL Cinecam` also includes the following standard `Cinecam` features which can be used to select properties such as `Aspect Ratio` and `Depth of Field`:
     -   `Filmback`
