@@ -153,12 +153,12 @@ Video tutorials for installing and using the camera [can be found here](https://
 - There will always be a `Spout Sender` which is the program outputting the video and a `Spout Receiver` which is the program receiving the video.
 - If your video feed does not automatically appear in your desired program it is normally because either `Sender` or `Receiver` has an issue.
 - You can troubleshoot `Spout` using the tips below:
-1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
-2. Ensure that `Unreal` and your other program are running on the same GPU (this is an issue with some laptops). To deal with this:
+    1. Download the demo `Spout` sender/ receiver [here](https://leadedge.github.io/spout-download.html) to see whether it is the `Sender` program or the `Receiver` program that is not working with `Spout`.
+    2. Ensure that `Unreal` and your other program are running on the same GPU (this is an issue with some laptops). To deal with this:
     a. Check `Windows` `Task Manager` to see which `GPU` your programs are running on - [guide here](https://www.digitalcitizen.life/7-ways-launch-task-manager-windows-8/)
     b. [Use the guide here](https://www.itechtics.com/use-specific-gpu/#:~:text=Click%20on%20Graphics%20Settings.,run%20on%20a%20dedicated%20GPU.) to force your program to use a specific `GPU`.
-3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
-4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
+    3.  Ensure that the programmes you are sharing between are also in `High Performance` mode if your computer has any performance throttling (this can be common on laptops).
+    4. For any other issues [contact us on `Discord`](https://discord.gg/2PaMtnK)
 
 ## SPOUT Plugin for OBS
 
