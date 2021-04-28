@@ -1,7 +1,7 @@
 # Unreal Engine 360 degree Livestreaming Camera
 
 
-This plugin enables you to live-stream a 360 degree video output from `Unreal Engine` `at-Runtime` to any [`Spout` receiver program](https://spout.zeal.co/) including [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin)
+This plugin enables you to live-stream a `360 degree video` output from `Unreal Engine` `at-Runtime` to any [`Spout` receiver program](https://spout.zeal.co/) including [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin)
 
 It is compatible with `DirectX11` and `DirectX12` (for `Ray-Tracing`) and has a custom 360 degree `Bloom` `Post-Processing` algorithm for `Seamless 360 Bloom`.
 
@@ -36,13 +36,15 @@ Video tutorials for installing and using the camera [can be found here](https://
 
 1. Open your `Unreal` `Project` and, in the `Place Actors` window, search for `OWL360Livestreaming Cam Pawn`, select it and drop it into your scene.
 ![360 Actor](images/360actor.jpg)
-2. To use the `360 Camera` you need to change the `Unreal` `GameMode`. Go to `Settings`>`World Settings`>`GameMode Override` and select `OWLGameModeBase`. If you are using this `OWL Gamemode` you can skip to Point 5, if you are using your own `GameMode` please follow the points below.
+2. To use the `360 Camera` you need to change the `Unreal` `GameMode`. 
+3. Go to `Settings`>`World Settings`>`GameMode Override` and select `OWLGameModeBase`. 
+4. If you are using this `OWL Gamemode` you can skip to Point 7, if you are using your own `GameMode` please follow points 5 & 6 below.
 ![360 Game Mode Base](images/360gamemodebase.jpg)
-2. If you have an existing `GameMode` class, change its `Parent` to the `OWLGameModeBase` in `GameMode` `Blueprint`>`Class Settings`>`Parent Class`.
+5. If you have an existing `GameMode` class, open your `GameMode` `Blueprint` and change its `Parent` to the `OWLGameModeBase` in `Blueprint`>`Class Settings`>`Parent Class`.
 ![Own Game Mode](images/360gamemode.png)
-3. Now go to `Class Defaults` in your `GameMode` `Blueprint` and change `HUD Class` to `HUDGlobal` (our class) and `Player Controller Class` to `OWLPlayerController`.
+6. Now go to `Class Defaults` in your `GameMode` `Blueprint` and change `HUD Class` to `HUDGlobal` (our class) and `Player Controller Class` to `OWLPlayerController`.
 ![Own Game Mode Class](images/360owngamemode.png)
-4. Ensure that whatever `GameMode` you were previously using is selected in `World Settings` (as explained in Point 1).
+7. Ensure that whatever `GameMode` you were previously using is selected in `World Settings` (as explained in Point 1).
 
 ### Account Authentication
 
@@ -181,15 +183,17 @@ In order to stream the output from `Unreal Engine` to the Internet:
 
 -  On desktop devices a resolution less than `2K` can look pixelated. `1080px` is still effective on mobile devices.
 -   A high upload speed is required to live-stream at higher resolutions.
-- A high bitrate will help reduce compression introduced into the image by encoding/ decoding (but requires a high upload speed).
+- A high `bitrate` will help reduce compression introduced into the image by encoding/ decoding (but requires a high upload speed).
 
 ### Upload Speeds/ Resolutions
 
-| Resolution | Minimum Upload Speed |
-| ---| ---- |
-|1080 |+7.5 mpbs |
-|2K |+15 mpbs |
-|4K |+30 mpbs |
+- For live-streaming we recommend the following upload speeds (and associated `bitrate` in `OBS Studio`):
+
+    | Resolution | Minimum Upload Speed |
+    | ---| ---- |
+    |1080 |+7.5 mpbs |
+    |2K |+15 mpbs |
+    |4K |+30 mpbs |
 
 ### Recommended Hardware/ Software
 
