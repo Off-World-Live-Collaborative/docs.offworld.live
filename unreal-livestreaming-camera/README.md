@@ -6,6 +6,7 @@ The plugin is compatible with `DirectX11` and `DirectX12` `APIs` and so can be u
 
 Video tutorials for using the camera`s various special features can be found [here](https://www.youtube.com/playlist?list=PLElT6SIg9JnBal5zWDEAVo_l-5TaEhD2J)
 
+For support, [please get in touch on our `Discord` channel.](https://discord.gg/2PaMtnK)
 
 ## Installation
 
