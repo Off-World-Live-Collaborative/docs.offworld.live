@@ -154,7 +154,7 @@ In order to stream the output from [Unreal Engine](https://www.unrealengine.com/
 
 1. [Install `OBS Studio`](https://obsproject.com/download)
 2. Install our [`Spout2 Source Plugin for OBS Studio (64bit)`.](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases) 
-3. See [installation guide here](https://docs.google.com/document/d/1jPyk8CN7-zeqZnV8f6GvZfuCs2_x1qDbmZRGIL4eI8g)
+3. See [installation guide here](http://docs.offworld.live/#/obs-spout-plugin/README)
 
 ## Technical Considerations
 
