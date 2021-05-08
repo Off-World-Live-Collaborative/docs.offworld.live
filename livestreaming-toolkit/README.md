@@ -1,5 +1,6 @@
 # Unreal Engine: Livestreaming Toolkit
 
+>This plugin is currently in private beta. To request access please fill out [this short form.](https://forms.clickup.com/f/2cqrr-1331/HMMLTQJM1Q9KSTQ9T0)
 
 This plugin enables you to send and receive live-stream video to/from [Unreal Engine](https://www.unrealengine.com/) to/from [`OBS Studio`](https://github.com/Off-World-Live/obs-spout2-source-plugin) or [other programs](https://spout.zeal.co/) with no computational overhead, compression or latency. 
 
