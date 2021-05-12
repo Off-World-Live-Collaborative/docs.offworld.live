@@ -13,6 +13,5 @@ For support, please get in touch on [our `Discord` channel.](https://discord.gg/
 ### [Unreal Engine 360 Livestreaming Camera](./360-camera/README.md)
 
 ### [Unreal Livestreaming Camera](./unreal-livestreaming-camera/README.md) 
-*(this plugin is soon to be replaced by the Livestreaming Toolkit)*
 
 ### [Spout Plugin for OBS](./obs-spout-plugin/README.md)
