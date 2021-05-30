@@ -277,34 +277,83 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 ![CompSender](images/compspoutsender.jpg)
 
 ## Unreal Virtual Camera
-- The Unreal `Virtual Camera`allows you to control your `OWL Cinecam` from an external device such as an `Iphone` via the `ARKit` plugin.
-- There are different ways to use the `Virtual Camera` with the `Livestreaming Toolkit` as below.
+- The Unreal `Virtual Camera` allows control from external device such as an `iPad` via the `Unreal Remote 2` [iOS app](https://apps.apple.com/us/app/unreal-remote-2/id1374517532).
+- For more information on how to set up `Live Link` to control the `Vcam` with external devices such as your `iPad` [see the guidance here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html).
+- There are currently two ways to use the `Virtual Camera` with the `Livestreaming Toolkit`:
 
-1. You can output from the `Unreal` `Virtual Camera Actor` [(described here)](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraActorQuickStart/index.html) via a `Render Target` to the `Spout Sender Manager`.
-    - The `Virtual Camera Actor` includes a `Render Target` as part of its `Scene Capture` component:
+### Virtual Camera Actor
+- You can output from the Unreal [`Virtual Camera Actor`](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraActorQuickStart/index.html) via a `Render Target` to the `Spout Sender Manager` as below.
+- Please see notes at the bottom if you are using a `UMG Overlay` on your `Virtual Camera` screen.
+    1. Seleect `Virtual Camera Actor`in `World Outliner`and go to the `Details` panel.
+    2. Select the `SceneCaptureComponent` from the list of components, go to `Scene Capture` and create a `Render Target`.
     ![Vcam Scene Capture](images/vcamscenecap.jpg)
-    - This will enable you to have the `Virtual Camera` `HUD` in your external controller but not in your final output.
-    - However, it uses the `Scene Capture 2D` render pipeline and so will have colour differences to your `Viewport`
+    4. Ensure that the `Capture Every Frame` tickbox is selected (otherwise the video feed will not update as you move your external device).
+    ![Vcam Capture Every Frame](images/vcamcaptureeveryframe.jpg)
+    5. You can now select this `Render Target` in your `Spout Sender Manager` (as described above).
 
-2. You can attach the `Virtual Camera Component` to your `OWL Cinecam` [(described here)](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html).
-    - In this case you use the `Render Target` from the `OWL Cinecam` to output to the `Spout Sender Manager`.
-    - The benefit of this is that the image will automatically match what you see in your `Viewport` but the negative is that any `HUD` will show in your final output.
-    - To avoid this, select `None` in `Virtual Camera`>`Output Providers`>`Output`>`UMG Overlay`.
+    #### UMG Overlay
+- There are three options for using `UMG Overlay` while streaming output from the `Virtual Camera Actor`, one showing the overlay on your streamed output:. 
+    1. To show the `UMG Overlay` in your streamed output you need to:
+    - Go to `SceneCaptureComponent`>`Details`>`Scene Capture`>`Capture Source` and select any of the `Final Color` options.
+    ![UMG Final Color](images/umgfinalcolour.jpg)
+    - This will also allow you to adjust the `Gamma` of your `Render Target` which is required to make your `Spout` output match the colours of your `Viewport`.
+    - To do so, double click on the thumbnail of your `Render Target` to open it's settings window.
+    - In the `Details` panel of the pop-up window, change the `Target Gamma` to '2.2'
+    ![RT Target Gamma](images/rtgamma.jpg)
+    2. To not show the `UMG Overlay` in your streamed output but show it in your external controller you need to: 
+    - Go to `SceneCaptureComponent`>`Details`>`Scene Capture`>`Capture Source`and select any of the `Scene Color` options.
+    ![Scene Color](images/vcamscenecolour.jpg)
+    - However, because the `UMG Overlay` is applied in post-processing, any color modifications to your `Render Target` get blocked so your output will have a `Gamma` of -'2.2' versus what you see in your `Viewport`.
+    - You will therefore need to color-adjust the output in your `Spout` Receiver program.
+    3. To not show the `UMG Overlay` at all, just set `UMG Overlay` to `None` by:
+    - Selecting the `VCam` component in `Virtual Camera Actor`> `Details` panel 
+    -  Change the selection in `Virtual Camera`>`Output Providers` array > `Output`>`UMG Overlay` to 'None':
     ![Vcam Scene Capture](images/vcamhud.jpg)
-3. The `Virtual Camera` can be connected to the `OWL Cinecam` by using the `Vcam` pawn as follows:
-    1. Select your `OWL Cinecam` in `World Outliner` and go to its  `Details` panel.
+    - This will also allow you to change the `Gamma` color settings of your `Render Target` as described in option 1 above to ensure a color match between your `Viewport` and your output.
+
+### OWL Cinecam
+- You can attach the [`Virtual Camera Component`](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html) to your `OWL Cinecam` as below.
+- Please see notes below if you are using a `UMG Overlay` on your `Virtual Camera` screen.
+    1. Select your `OWL Cinecam` in `World Outliner` and go to its `Details` panel.
 ![OWL Cinecam Details](images/cinecamdetails.jpg)
     2. In the `Details` panel go to `+Add Component` and in the search box type `Vcam` and select this `Component`.
 ![Add Vcam Component](images/vcamcomp.jpg)
     3. Drag the `Vcam` `Component` on top of your `OWL Cinecam Capture Component` to attach it to your `OWL Cinecam` so that it is nested below.
 ![Attach Vcam Component](images/attachvcam.jpg)
-    4. Now, when your `Vcam` is configured (see links below), it will operate your `OWL Cinecam` and output video via its `Render Target` to the `Spout Sender Manager`.
-4. For more information on how to set up `Live Link` to control the `Vcam` with external devices such as your `Iphone` [see the guidance here](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCameraPlugin/index.html).
+    4. Now, when your `Vcam` is configured, it will operate your `OWL Cinecam` and output video via its `Render Target` to the `Spout Sender Manager`.
+
+#### UMG Overlay
+- The benefit of using the `OWL Cinecam` is that the output video will automatically match the colors you see in your `Viewport`.
+- However, currently there is no way to remove the `UMG Overlay` and so it will appear in your streamed video feed.
+- If you don't need the `UMG Overlay` in your external controller then you can select `None` in `Virtual Camera`>`Output Providers`>`Output`>`UMG Overlay` to get rid of it all together.
+![Vcam Scene Capture](images/vcamhud.jpg)
+- If you need the `UMG Overlay` but don't want it to appear in your streamed output then please us the `Virtual Camera Actor` as described above.
+
 
 ## Performance Optimisation 
 
 ### GPU Usage Optimisation
-- Each `Active` Render Target creates a new video feed that has to be rendered from Unreal and so uses a lot of GPU power.
+
+#### Overview
+- Each `Active` `Render Target` creates a new video feed that has to be rendered from Unreal and so uses additional GPU power.
+- In addition, if you are using the main Unreal `Viewport` as well this will also be rendering the scene and so competing for GPU resources.
+- There are a number of ways to manage this depending on your needs.
+
+#### Standalone Mode
+- If you don't need access to the `Editor` controls then you can run your level in `Standalone Mode` which means that the main `Viewport` won't be rendering.
+![Standalone Mode](images/standalone.jpg)
+
+#### Reducing Viewport Rendering
+1. Reduce your `Viewport`>`Screen Percentage` to 50%:
+
+    ![Viewport Screen Percentage](images/viewportscreenper.jpg)
+
+2. Set your `Viewport`>`View Mode` to `Brush Wireframe`:
+
+    ![Brush Wireframe](images/brushwireframe.jpg)
+
+
+#### Live Editing
 - Since `Spout` is zero-latency, a number of tricks can be used for live-editing between different cameras in a seamless way (all of these can be configured via `Blueprints` for control via `OSC` or external devices):
     1. Use the `Pause` tickbox on the `OWL Cinecam` for any static camera that you want to see the location of (for live-editing) but you don't need to have running until you select it as your main camera.
     2. Use the `Active` tickbox on the `Spout Sender Manager` and `Spout Receiver Manager` to only deliver the video feed from the Render Target when you need it (`Paused` and `Active` will show a static image as above).
