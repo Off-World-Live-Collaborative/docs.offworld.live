@@ -28,14 +28,7 @@ N.B. This plugin only works for video sharing on a single GPU. For sharing over 
 -   Select the `OBS Studio` directory if not the default install location.
 ![Install Location](images/installlocation.jpg)
 
-
-### Manual Installation
-
--   If you are unable to run the installer, download the release zip file `OBS_SPOUT2_Plugin_Build_xxx.'zip` from the [Releases Page](https://github.com/Off-World-Live/obs-spout2-source-plugin/releases)
--   Extract the entire contents into your `OBS` directory.
--   Verify that `win-spout.dll` is in the directory `<obs-install>\obs-plugins\64bit`.
-
-## Setup
+## Receiving Spout into OBS
 
 Open `OBS` and add `Spout2 Capture` to your `Sources` as follows:
 
@@ -58,7 +51,17 @@ Open `OBS` and add `Spout2 Capture` to your `Sources` as follows:
     4. Your `output` window should now be the same as your `Source` size.
     ![Spout2 Resized](images/resized.jpg)
 
-## Output
+## Sending Spout from OBS
+
+1. Open `OBS` go to `Tools` and select `Spout Output Settings`
+![Spout2 Output](images/spoutoutputtools.jpg)
+2. In the pop-up input the name you would like for your `Spout` output and click `Start`. (While you are outputting your `OBS` viewport will be locked)
+![Spout2 Output Yes](images/spoutoutputyes.jpg)
+3. Create a `Spout` receiver in your desired program, select the name of your sender as you input above and you will now receive the video stream from `OBS`.
+
+    ![Spout2 Output Receiver](images/spoutreceiverexample.jpg)
+
+## Streaming/ Recording from OBS
 
 ### Recording
 
