@@ -1,10 +1,10 @@
 # Spout Plugin for OBS Studio
 
-This plugin creates a `Spout` video intput source in `OBS Studio` from any Spout sender [program](https://spout.zeal.co/).
+This plugin creates a `Spout` video input source in `OBS Studio` from any Spout sender [program](https://spout.zeal.co/) and a `Spout` output video texture from your `OBS` canvas.
 
 It enables high resolution, zero-compression, zero-latency, zero-computational overhead video capture and so is better than `NDI`, capture cards, screen capture or the `DirectShow` `SpoutCam` interface.
 
-It enables you to send video in the background while retaining full control of your sender program viewport.
+It enables you to send video in the background while retaining full control of your `Spout` sender/ receiver program viewport.
 
 A video tutorial for installing the plugin can be found [here.](https://www.youtube.com/watch?v=-AcauTS1V8k)
 
