@@ -262,18 +262,16 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 
 
 ## Composure
-**_Composure_ is Unreal's native plugin for chromakeying elements in your scene.**
+Composure is Unreal's native plugin for chromakeying elements in your scene.
 - You can output your Composure `Render Target` through the `Spout Sender Manager` as follows:
 1. Follow the [Unreal Composure guide here](https://docs.unrealengine.com/en-US/WorkingWithMedia/Composure/QuickStart/index.html) (or a similar video guide).
-2. Once you have created your Composure actor, select your `Media Plate` in `World Outliner`and in the `Details` panel go to `Output` section and add a new `Array Element`.
-![Output](images/output.jpg)
+2. Once you have created your Composure actor, select your `comp` in `World Outliner`and in the `Details` panel go to `Output` and add a new `Array Element`.
+![Output](images/compaddarray.jpg)
 3. In your `Array Element` for `Output Pass` please select `Render Target Compositing Output` from the drop down.
-![RTCOutput](images/rtcoutput.jpg)
-4. Create a new `Render Target` following the instructions as above (in the `OWL Cinecam` section).
-![CompRTarget](images/comprtarget.jpg)
-5. Name your `Output` and ensure it is `Enabled`
-![CompNamed](images/compnamed.jpg)
-6. Now if you go to your `Spout Sender Manager`you can create a new `Array Element` using your new Render Target for your _Composure_ output and stream it wherever you like.
+![RTCOutput](images/comprenderoutput.jpg)
+4. Create a new `Render Target` following the instructions as above (in the `OWL Cinecam` section). Name your `Output` and ensure it is `Enabled`
+![CompRTarget](images/comprendertarget.jpg)
+5. Now if you go to your `Spout Sender Manager`you can create a new `Array Element` using your new Render Target for your _Composure_ output and stream it wherever you like.
 ![CompSender](images/compspoutsender.jpg)
 
 ## Unreal Virtual Camera
