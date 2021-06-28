@@ -161,7 +161,7 @@ In order to stream the output from [Unreal Engine](https://www.unrealengine.com/
 
 ### System Requirements
 
--   Operating System: `Windows` 8 or later
+-   Operating System: `Windows` 10
 -   For ray-tracing, `RTX` (or other compatible cards) are required. Please see more information [here](https://docs.unrealengine.com/en-US/Engine/Rendering/RayTracing/index.html).
 -   Your `Windows` SDK should be updated to the latest version. Please use `Visual Studio` to check this (it should be at least above version 19XXX)
 
