@@ -69,7 +69,7 @@ Open `OBS` and add `Spout2 Capture` to your `Sources` as follows:
 ![Spout2 Output](images/obsfilters.jpg)
 2. In the new window that appears add a new `Spout Filter` for that `Source` using the '+' icon in the bottom left of the screen: 
 ![Spout2 Output](images/addobsfilter.jpg)
-3. Change the default name to the name your need for your `Spout` output so you can recognise it in your Spout receiver program: 
+3. Change the default name to the name your need for your `Spout` output so you can recognise it in your `Spout` receiver program: 
 ![Spout2 Output](images/filtername.jpg)
 4. Go to your `Spout` receiver program and select the output you have created in `OBS` and it will automatically appear:
 ![Spout2 Output](images/filterreceiver.jpg)
