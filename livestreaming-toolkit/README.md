@@ -140,7 +140,7 @@ _You need to:_
     3. Click the `Active` box to begin sending to `Spout`.
     ![Render Target](./images/rendertarget.jpg)
 4. To stream multiple cameras, just add additional `Array Elements`.
-5. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
+5. You can control the `Active` tick-box via `Blueprints` to manage which cameras are streaming from Unreal at any one time.
 
 ## Spout Receiver Manager
 
@@ -161,6 +161,7 @@ _You need to:_
 3. Create a `Render Target` and give it a name.
 ![Spout Receiver Details Panel](./images/receivertarget.jpg)
 4. Select a `Spout` input feed from the list of options in the `Name` dropdown (any active Spout source will show).
+![Spout Receiver Details Panel](./images/receiverdropdown.jpg)
 5. Click `Active` to start capturing the `Spout` source to your `Render Target`.
 6. To receive multiple input feeds, just add additional `Array Elements`.
 7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
@@ -265,6 +266,8 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
 
 
 ## Composure
+
+### Composure Spout Output
 Composure is Unreal's native plugin for chromakeying elements in your scene.
 - You can output your Composure `Render Target` through the `Spout Sender Manager` as follows:
 1. Follow the [Unreal Composure guide here](https://docs.unrealengine.com/en-US/WorkingWithMedia/Composure/QuickStart/index.html) (or a similar video guide).
@@ -276,6 +279,20 @@ Composure is Unreal's native plugin for chromakeying elements in your scene.
 ![CompRTarget](images/comprendertarget.jpg)
 5. Now if you go to your `Spout Sender Manager`you can create a new `Array Element` using your new Render Target for your _Composure_ output and stream it wherever you like.
 ![CompSender](images/compspoutsender.jpg)
+
+### Composure Spout Input
+- You can also input live-video to Composure using Spout, which helps if you want to route capture cards that are unrecognised by Unreal Engine through OBS Studio.
+- Because Spout is zero-latency/ compression you won't lose video quality or frames.
+
+1. Follow the [Unreal Composure guide here](https://docs.unrealengine.com/en-US/WorkingWithMedia/Composure/QuickStart/index.html) (or a similar video guide) to create your comp.
+2. Create a your video input using the `Spout Receiver Manager` as described above so that it is streaming into Unreal as a `Render Target`.
+3. Go to 'World Outliner' select the `media plate` from your `comp` and go to its `Details` panel.
+![CompReceiver](images/mediaplate.jpg)
+4. In the `Details` panel got to `Composure` and add a new `Input` using the `Array element` and select `Texture Input`:
+![CompReceiver](images/comptextureinput.jpg)
+5. In the `Texture Input` drop-down, select the `Render Target` you added in step 2 above from the `Search Assets` list:
+![CompReceiver](images/compinput.jpg)
+6. Your Spout input video will now be streaming into your comp!
 
 ## Unreal Virtual Camera
 - The Unreal `Virtual Camera` allows control from external device such as an `iPad` via the `Unreal Remote 2` [iOS app](https://apps.apple.com/us/app/unreal-remote-2/id1374517532).

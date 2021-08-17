@@ -53,13 +53,38 @@ Open `OBS` and add `Spout2 Capture` to your `Sources` as follows:
 
 ## Sending Spout from OBS
 
+- There are two ways of sending Spout from OBS:
+1. Via a `Filter`: 
+    - This lets you send any active `OBS` `Source` to Spout.
+    - You can manage your inputs and outputs in a single version of OBS.
+    - You can output as many simultaneous video feeds as you like (you just add a new filter for each feed). 
+    - This is the best way to output from OBS.
+2. Via `Tools`:
+    - This lets you send your current `OBS` canvas. 
+    - It locks `OBS` so you can't use it for any other purpose.)
+
+### OBS Filter Output
+
+1. Open `OBS`, select the `Source` you want to output, ensure that it is active (the 'eye' logo is lit) and that it is highlighted with the mouse and then click `Filters`: 
+![Spout2 Output](images/obsfilters.jpg)
+2. In the new window that appears add a new `Spout Filter` for that `Source` using the '+' icon in the bottom left of the screen: 
+![Spout2 Output](images/addobsfilter.jpg)
+3. Change the default name to the name your need for your `Spout` output so you can recognise it in your Spout receiver program: 
+![Spout2 Output](images/filtername.jpg)
+4. Go to your `Spout` receiver program and select the output you have created in `OBS` and it will automatically appear:
+![Spout2 Output](images/filterreceiver.jpg)
+5. You can create as many simultaneous outputs as you like, each one will be a different `Filter` for the `OBS` `Source` you want to output. 
+6. N.B. a `Source` doesn't have to show on your `OBS` canvas (it can behind the canvas/ video feed you want to stream to the internet for example) but it has to be selected (the eye icon is lit) in order to output to `Spout`.
+
+
+### OBS Tools Output
+
 1. Open `OBS` go to `Tools` and select `Spout Output Settings`
 ![Spout2 Output](images/spoutoutputtools.jpg)
 2. In the pop-up input the name you would like for your `Spout` output and click `Start`. (While you are outputting your `OBS` viewport will be locked)
 ![Spout2 Output Yes](images/spoutoutputyes.jpg)
 3. Create a `Spout` receiver in your desired program, select the name of your sender as you input above and you will now receive the video stream from `OBS`.
-
-    ![Spout2 Output Receiver](images/spoutreceiverexample.jpg)
+![Spout2 Output Receiver](images/spoutreceiverexample.jpg)
 
 ## Streaming/ Recording from OBS
 
