@@ -241,7 +241,7 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
     ![OBS Alpha View](images/obsalphaview.jpg)
 
 
-## DLSS & OWL Cinecam
+## DLSS FPS Enhancement
 
 - **DLSS** works with the `OWL CineCam` in all game targets (`PIE`, `Standalone`, `Packaged`) but not `in-Editor` (because of the **DLSS** implementation). 
 - You can setup **DLSS** as follows:
