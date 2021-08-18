@@ -1,6 +1,6 @@
 # Unreal Engine: Livestreaming Toolkit
 
->This plugin is currently in private beta. To request access please fill out [this short form.](https://forms.clickup.com/f/2cqrr-1331/HMMLTQJM1Q9KSTQ9T0)
+>This plugin is currently in private beta. Please request access [here.](https://forms.clickup.com/f/2cqrr-1331/HMMLTQJM1Q9KSTQ9T0) For support, [please get in touch on our Discord channel.](https://discord.gg/2PaMtnK)
 
 This plugin enables you to send and receive video to/from [Unreal Engine](https://www.unrealengine.com/) to/from [Spout programs](https://spout.zeal.co/) (including [OBS Studio](https://github.com/Off-World-Live/obs-spout2-source-plugin)) with no computational overhead, compression or latency. 
 
@@ -9,18 +9,18 @@ This plugin enables you to send and receive video to/from [Unreal Engine](https:
 
 ## Summary
 The toolkit works both `in-Editor` and `at Runtime` and is compatible with both `DirectX11` and `DirectX12` (for ray-tracing). It has four main components (more details below):
-1. The `OWL Cinecam` which combines the most useful features from the Unreal `Cinecam` and `Scene Capture` components and outputs direct to a `Render Target`.
-2. The `OWL Capture` component which can be attached to any Unreal Camera or Cinecam to capture it's content to a `Render Target`.
-3. The `Spout Sender Manager` which allows you to output any Unreal `Render Target` to [`Spout`](https://spout.zeal.co/)`.
-4. The `Spout Receiver Manager` which allows you to input any [`Spout`](https://spout.zeal.co/) video feed into Unreal as a `Render Target`.
+1. The `OWL Cinecam` which is an Unreal `Cinecam` which outputs direct to a `Render Target` and includes alpha output, HUD/Burn-In, DLSS and various other additional capabilities.
+2. The `OWL Capture` component which can be attached to any Unreal Camera or Cinecam to deliver the same output and capabilities as the `OWL Cinecam`.
+3. The `Spout Sender Manager` which allows you to output any Unreal `Render Target` to [`Spout`](https://spout.zeal.co/) (including from `Composure` and Unreal's `Virtual Camera`).
+4. The `Spout Receiver Manager` which allows you to input any [`Spout`](https://spout.zeal.co/) video feed into Unreal as a `Render Target` including to `Composure` or as a `Material` etc.
 
-For support, [please get in touch on our Discord channel.](https://discord.gg/2PaMtnK)
+
 
 
 ## Unreal Plugin Download and Setup
 
 ### Request Access
-To request access to the alpha, please complete the (very) short form [here](https://forms.clickup.com/f/2cqrr-1331/HMMLTQJM1Q9KSTQ9T0)
+Please request access to the beta [here](https://forms.clickup.com/f/2cqrr-1331/HMMLTQJM1Q9KSTQ9T0)
 
 ### Registration/ Download
 
@@ -46,7 +46,9 @@ To request access to the alpha, please complete the (very) short form [here](htt
 
 #### Sign in to Off World Live
 
-1. Open your Unreal project and you will see an `Off World Live` icon above your Viewport. Click it and you will be taken to login.
+1. When you open your Unreal project, you will be prompted to login:
+![Off World Icon](./images/login.popup.jpg)
+2. Alternatively, if you want to login later, you can do so through the Editor icon:   
 ![Off World Icon](./images/login.jpg)
 2. Login with the details you used sign in to the Downloads page.
 ![Off World Icon](./images/signin.jpg) 
@@ -57,20 +59,20 @@ To request access to the alpha, please complete the (very) short form [here](htt
 ## Toolkit Overview and Setup
 
 There are four main components to the toolkit:
-1. The `OWL Cinecam` which combines the most useful features from the Unreal `Cinecam` and `Scene Capture` components and outputs direct to a `Render Target`.
-2. The `OWL Capture` component which can be attached to any Unreal Camera or Cinecam to capture it's content to a `Render Target`.
-3. The `Spout Sender Manager` which allows you to output any Unreal `Render Target` to [`Spout`](https://spout.zeal.co/)`.
-4. The `Spout Receiver Manager` which allows you to input any [`Spout`](https://spout.zeal.co/) video feed into Unreal as a `Render Target`.
+1. The `OWL Cinecam` which is an Unreal `Cinecam` which outputs direct to a `Render Target` and includes alpha output, HUD/Burn-In, DLSS and various other additional capabilities.
+2. The `OWL Capture` component which can be attached to any Unreal Camera or Cinecam to deliver the same output and capabilities as the `OWL Cinecam`.
+3. The `Spout Sender Manager` which allows you to output any Unreal `Render Target` to [`Spout`](https://spout.zeal.co/) (including from `Composure` and Unreal's `Virtual Camera`).
+4. The `Spout Receiver Manager` which allows you to input any [`Spout`](https://spout.zeal.co/) video feed into Unreal as a `Render Target` including to `Composure` or as a `Material` etc.
 
 ## OWL Cinecam
 
 ### Overview
 
 The `OWL Cinecam` has all the features of the Unreal Cinecam plus many additional capabilities: 
-1. It uses the Unreal `Viewport` rendering pipeline which is more sophisticated than `Scene Capture 2D` 
+1. It uses the Unreal `Viewport` rendering pipeline which has more capabilties than `Scene Capture 2D`.
 2. It can be used with rendering optimisations such as [DLSS](unrealengine.com/marketplace/en-US/product/nvidia-dlss) and [TAAU](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/ScreenPercentage/).
-3. It benefits from Cinecam features such as `Depth of Field`, `Filmback` and `Look At Tracking`.
-4. It  integrates useful `Scene Capture 2D` features like `Alpha` (`Show Only` and `Hide Only`) and exposed `Rendering Flags`.
+3. It benefits from `Cinecam` features such as `Depth of Field`, `Filmback` and `Look At Tracking`.
+4. It  integrates features like `Alpha` (`Show Only` and `Hide Only`) and exposed `Rendering Flags`.
 5. It has the option for a customisable `UMG` for `HUDs`/ `Burn-Ins`.
 6. It has a `Pause Rendering` capability for performance optimisation.
 7. It outputs to a `Render Target` and so can be used with our `Spout Sender Manager`to live-stream video.
@@ -78,9 +80,9 @@ The `OWL Cinecam` has all the features of the Unreal Cinecam plus many additiona
 ### Instant Live-stream Wizard
 
 You can select the `OWL Cinecam Stream Wizard` to instantly create an `OWL Cinecam` which live-streams from Unreal:
-1. In the Editor Toolbar click on the Off World Live logo and select `OWL Cinecam Stream Wizard`.
+1. In the Editor Toolbar click on the Off World Live logo and select `OWL Cinecam Stream Wizard`.   
 ![OWL Cinecam Stream Wizard](images/streamwizard.jpg)
-2. Give a name to your stream.
+2. In the pop-up that appears, give a name to your stream.
 ![OWL Cinecam Stream Wizard](images/wizardname.jpg)
 3. Add another or exit the window.
 ![OWL Cinecam Stream Wizard](images/wizardsuccess.jpg)
@@ -91,13 +93,11 @@ and a `Spout Sender Manager` which is sending the `Render Target` to Spout.
 5. If you want to modify the details of those two actors, you can select them in the `World Outliner` panel and change their features as outlined below:
 ![OWL Cinecam Stream Wizard](images/wizardoutliner.jpg) 
 
-### Configuration
+### Add from Place Actors
  
 1. Find the `OWLCinecam Capture` Actor in the `Place Actors` panel and drag it into your scene.
 ![OWL Cinecam](images/owlcinecamactor.jpg)
-2. In `World Outliner`select `OWLCine Cam Capture`so it opens in your `Details` panel.
-![OWL Cinecam Details](images/cinecamdetails.jpg)
-3. In your `Details` panel, create a `Render Target` to receive the video feed from your `OWL Cinecam` by clicking the dropdown next to `Texture Target` and selecting `Render Target`.
+2. In `World Outliner`select `OWLCine Cam Capture`so it opens in your `Details` panel and create a `Render Target` by clicking the dropdown next to `Texture Target` and selecting `Render Target`.
 ![OWL Cinecam Details](images/cinecamrendertarget.jpg) 
 4. Name your Render Target so that you can select it from the drop down list.
 ![OWL Cinecam Render Target Name](images/rendertargetname.jpg) 
@@ -130,17 +130,13 @@ and a `Spout Sender Manager` which is sending the `Render Target` to Spout.
 
 1. Find the `OWLSpoutSenderManager` Actor in the `Place Actors`panel and drag it into your scene.
 ![Select Spout Sender Actor](./images/spoutsenderactorselect.jpg)
-2. In `World Outliner`select `OWLSpoutSenderManager`so it opens in your `Details` panel.
-![Spout Sender Details Panel](./images/spoutsenderdetails.jpg)
-3. In your `Details` panel add a `Spout Sender` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its Members _(there are 4)_. 
+2. In `World Outliner` select `OWLSpoutSenderManager` so it opens in your `Details` panel, add a `Spout Sender` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its Members (there are 4). 
 ![Spout Sender Array](./images/senderarray.jpg)
-_You need to:_
-    1.  Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in `OBS`/ your `Spout` receiver programme.
-    2. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured above or from another Unreal output.) 
-    3. Click the `Active` box to begin sending to `Spout`.
-    ![Render Target](./images/rendertarget.jpg)
-4. To stream multiple cameras, just add additional `Array Elements`.
-5. You can control the `Active` tick-box via `Blueprints` to manage which cameras are streaming from Unreal at any one time.
+3. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured above or from another Unreal output.) 
+4. Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in `OBS`/ your `Spout` receiver programme.
+5. Click the `Active` box to begin sending to `Spout`.
+6. To stream multiple cameras, just add additional `Array Elements`.
+7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are streaming from Unreal at any one time.
 
 ## Spout Receiver Manager
 
@@ -155,27 +151,24 @@ _You need to:_
 
 1. Find the `OWLSpoutReceiverManager` Actor in the `Place Actors` panel and drag it into your scene.  
 ![Spout Receiver Manager](images/spoutreceiver.jpg "image_tooltip")
-2. In `World Outliner` select `OWLSpoutReceiverManager` so it opens in your `Details` panel.
-3. In your `Details` panel add a `Spout Receiver` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its _Members_ (there are 3). 
+2. In `World Outliner` select `OWLSpoutReceiverManager` so it opens in your `Details` panel, add a `Spout Receiver` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its Members (there are 3). 
 ![Spout Receiver Details Panel](./images/receiverarray.jpg)
 3. Create a `Render Target` and give it a name.
-![Spout Receiver Details Panel](./images/receivertarget.jpg)
 4. Select a `Spout` input feed from the list of options in the `Name` dropdown (any active Spout source will show).
-![Spout Receiver Details Panel](./images/receiverdropdown.jpg)
 5. Click `Active` to start capturing the `Spout` source to your `Render Target`.
 6. To receive multiple input feeds, just add additional `Array Elements`.
 7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
 8. To add your `Spout` video feed to your level, just drag-and-drop your `Render Target`from your `Content Browser` to any asset in your scene.
 ![Spout Receiver Details Panel](./images/receivermaterial.jpg)
 
-## OWL Cinecam Features
+## OWL Cinecam
 
-- The `OWL Cinecam` combines features from the Unreal `Cinecam` and `Scene Capture 2D` to create a live-streaming camera that benefits from the features and rendering pipeline of `Cinecam`.
-- The camera contains all the standard features of the Unreal Cinecam in their standard `Details` panel sections plus an additional `OWL Capture Settings` section.
+- The `OWL Cinecam` is a live-streaming camera that benefits from the features and rendering pipeline of `Cinecam`.
+- It also contains a variety of augmented features vs. the Unreal `Cinecam` such as Alpha output, UMG Rendering for HUD/ Burn-Ins, DLSS capability and exposed Render Flags.
 
 ### Render Target Output
   
-- You can select the `Render Target` to capture the `OWL Cinecam` using the drop-down as described above in `OWL Cinecam` step 3.
+- You can select the `Render Target` to capture the `OWL Cinecam`.
 - You can create multiple `Render Targets` and use `Blueprints` to switch between then as required.
 ![Cinecam Render Target](images/ccrtarget.jpg)
 
@@ -186,7 +179,7 @@ _You need to:_
 - To disconnect `Resolution` from `Aspect Ratio` you can untick `Constrain Aspect Ratio` in the `Camera Options` section of the `Details` panel. N.B. this will create a distorted output.
 ![Constrain Ratio](images/constrain.jpg) 
 
-### Render Target Clear Color/ Gamma
+### Render Target Gamma
 
 - The Render Target `Gamma` is exposed in the `Details` panel and set to 2.2 which ensures that your streamed output matches the colors of your Unreal `Viewport`.
 ![Pause Rendering](images/gamma.jpg) 
@@ -194,13 +187,14 @@ _You need to:_
 ### Pause Rendering
 
 -   This enables you to `Pause Rendering` on the `OWL Cinecam` which is useful for saving GPU power when using live-editing.
--   If `Pause Rendering` is selected in the `OWL Cinecam` `Details` panel and `Active` is selected in the `Spout Sender Manager` you will continue to stream a static image of the last frame. (This is useful if you want to see the position of your different cameras but only render a live video-feed from a single camera at a time).
+-   If `Pause Rendering` is selected in the `OWL Cinecam` `Details` panel and `Active` is selected in the `Spout Sender Manager` you will continue to stream a static image of the last frame. 
+- This is useful if you want to see the position of your different cameras but only render a live video-feed from a single camera at a time.
 ![Pause Rendering](images/pauserendering.jpg) 
 
 ### UMG Rendering
 
 - This enables you to add a UMG to the `Render Target` of your camera which you can use for a Heads Up Display (HUD) or custom Burn-In.
-- You can create any UMG as a blueprint Widget and then add it via the drop-down.
+- You can create any UMG as a [Blueprint Widget](https://docs.unrealengine.com/4.26/en-US/InteractiveExperiences/UMG/HowTo/CreatingWidgets/) and then add it via the drop-down.
 - The `Render HUD` option allows you to toggle the UMG on/ off which can be controlled from blueprints.
 ![UMG Rendering](images/umgrendering.jpg) 
 
@@ -208,7 +202,6 @@ _You need to:_
 
 -   `Show Only` is used to select specific `Actors` to appear in an alpha channel output.
 -   `Hidden Actors` can be used to select `Actors` in your scene and stop them from being rendered into your output.
--  Both require a post-process volume (see full guide below).
 ![Show Only/ Hidden Actors](images/showhide.jpg) 
 
 ### Max View Distance Override
@@ -235,13 +228,6 @@ You can select specific `Actors` to show/ hide (but only `Actors`, not `Componen
  ![Project Settings](images/projectsettings.jpg)
 2. find `Enable alpha channel support` in `Engine - Rendering/ Postprocessing` and set it to `AllowThroughTonemapper` (you will be asked to restart your level).
 ![Allow Tonemapper](images/allowtonemapper.jpg)
-3. If you don’t have a `Post Process Volume` in your scene then [follow these instructions](https://subscription.packtpub.com/book/game_development/9781784391966/4/ch04lvl1sec24/adding-post-process) to add one. Then:
-    1. Select your `Post Process Volume` in `World Outliner`.
-    2. In its `Details` panel go to `Rendering Features`/ `Post Process Materials`/ `Array`.
-    3. Add a new `Array element` and select `Asset reference` from the drop down.
-    4. Search for and select `M_OwlAlpha`.
-    ![OWLAlpha](images/owlalpha.jpg)
-    5. If `M_OwlAlpha` doesn’t appear in your list, go to `Content Browser`>  `View Options`> `Show Plugin Content` and then repeat.
 4. Click on the `OWL Cinecam` in the `World Outliner` and go to its `Details` panel.
     1. Using the `Hidden Actors` or `Show Only Actors` arrays select the `Actors` that you would like to show/ hide.
     2. You can do this from the drop down list or using the picker to the left of the drop down list.
@@ -277,12 +263,12 @@ Composure is Unreal's native plugin for chromakeying elements in your scene.
 ![RTCOutput](images/comprenderoutput.jpg)
 4. Create a new `Render Target` following the instructions as above (in the `OWL Cinecam` section). Name your `Output` and ensure it is `Enabled`
 ![CompRTarget](images/comprendertarget.jpg)
-5. Now if you go to your `Spout Sender Manager`you can create a new `Array Element` using your new Render Target for your _Composure_ output and stream it wherever you like.
+5. Now if you go to your `Spout Sender Manager` you can create a new `Array Element` using your new Render Target for your `Composure` output and stream it wherever you like.
 ![CompSender](images/compspoutsender.jpg)
 
 ### Composure Spout Input
-- You can also input live-video to Composure using Spout, which helps if you want to route capture cards that are unrecognised by Unreal Engine through OBS Studio.
-- Because Spout is zero-latency/ compression you won't lose video quality or frames.
+- You can also input live-video to `Composure` using `Spout`, which helps if you want to route capture cards that are unrecognised by Unreal through `OBS Studio`.
+- Because `Spout` is zero-latency/ compression you won't lose video quality or frames.
 
 1. Follow the [Unreal Composure guide here](https://docs.unrealengine.com/en-US/WorkingWithMedia/Composure/QuickStart/index.html) (or a similar video guide) to create your comp.
 2. Create a your video input using the `Spout Receiver Manager` as described above so that it is streaming into Unreal as a `Render Target`.
@@ -302,7 +288,7 @@ Composure is Unreal's native plugin for chromakeying elements in your scene.
 ### Virtual Camera Actor
 - You can output from the Unreal [`Virtual Camera Actor`](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraActorQuickStart/index.html) via a `Render Target` to the `Spout Sender Manager` as below.
 - Please see notes at the bottom if you are using a `UMG Overlay` on your `Virtual Camera` screen.
-    1. Seleect `Virtual Camera Actor`in `World Outliner`and go to the `Details` panel.
+    1. Select `Virtual Camera Actor`in `World Outliner`and go to the `Details` panel.
     2. Select the `SceneCaptureComponent` from the list of components, go to `Scene Capture` and create a `Render Target`.
     ![Vcam Scene Capture](images/vcamscenecap.jpg)
     4. Ensure that the `Capture Every Frame` tickbox is selected (otherwise the video feed will not update as you move your external device).
@@ -331,7 +317,6 @@ Composure is Unreal's native plugin for chromakeying elements in your scene.
 
 ### OWL Cinecam
 - You can attach the [`Virtual Camera Component`](https://docs.unrealengine.com/en-US/AnimatingObjects/VirtualCamera/VirtualCameraComponentQuickStart/index.html) to your `OWL Cinecam` as below.
-- Please see notes below if you are using a `UMG Overlay` on your `Virtual Camera` screen.
     1. Select your `OWL Cinecam` in `World Outliner` and go to its `Details` panel.
 ![OWL Cinecam Details](images/cinecamdetails.jpg)
     2. In the `Details` panel go to `+Add Component` and in the search box type `Vcam` and select this `Component`.
@@ -360,22 +345,19 @@ Composure is Unreal's native plugin for chromakeying elements in your scene.
 #### Disable Viewport Rendering
 
 - You can disable Unreal `Viewport` rendering both in-Editor and at-Runtime by using the toggle boxes in the Off World Live Editor drop-down.
-- The performance gain this creates will depend on the resolution of your screen and the screen percentage setting you have in your `Viewport` settings.
+- The performance gain this creates will depend on the resolution of your screen and the screen percentage setting you have in your `Viewport` settings.   
 ![Viewport Rendering](images/viewportrendering.jpg)
 
 #### Reduce Viewport Rendering
-1. Reduce your `Viewport`>`Screen Percentage` to 50%:
-
-    ![Viewport Screen Percentage](images/viewportscreenper.jpg)
-
-2. Set your `Viewport`>`View Mode` to `Brush Wireframe`:
-
-    ![Brush Wireframe](images/brushwireframe.jpg)
+1. Turn on DLSS (this is the highest performance option). See instructions above.
+2. Reduce your `Viewport`>`Screen Percentage` to 50%:
+![Viewport Screen Percentage](images/viewportscreenper.jpg)
+3. Set your `Viewport`>`View Mode` to `Brush Wireframe`:
+![Brush Wireframe](images/brushwireframe.jpg)
 
 #### Standalone Mode
 - If you don't need access to the `Editor` controls then you can run your level in `Standalone Mode` which means that the main `Viewport` won't be rendering.
 ![Standalone Mode](images/standalone.jpg)
-
 
 #### Live Editing
 - Since `Spout` is zero-latency, a number of tricks can be used for live-editing between different cameras in a seamless way (all of these can be configured via `Blueprints` for control via `OSC` or external devices):
