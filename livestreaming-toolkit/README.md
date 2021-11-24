@@ -64,6 +64,8 @@ There are four main components to the toolkit:
 3. The `Spout Sender Manager` which allows you to output any Unreal `Render Target` to [`Spout`](https://spout.zeal.co/) (including from `Composure` and Unreal's `Virtual Camera`).
 4. The `Spout Receiver Manager` which allows you to input any [`Spout`](https://spout.zeal.co/) video feed into Unreal as a `Render Target` including to `Composure` or as a `Material` etc.
 
+Update: we have added a new experimental component: `NDI Sender Manager` which allows you to output any Unreal `Render Target` to `NDI` (see more details below).
+
 ## OWL Cinecam
 
 ### Overview
@@ -137,6 +139,29 @@ and a `Spout Sender Manager` which is sending the `Render Target` to Spout.
 5. Click the `Active` box to begin sending to `Spout`.
 6. To stream multiple cameras, just add additional `Array Elements`.
 7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are streaming from Unreal at any one time.
+
+## NDI Sender Manager
+
+### Overview
+
+- The `NDI Sender Manager` is an Unreal Actor that you use to manager different real-time `NDI` video outputs from Unreal.
+- Outputs are managed as `Render Targets` in the same way as the `Spout Sender Manager`.
+- It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
+- It also works with alpha outputs, with DLSS, custom resolutions and variable framerates and so has additional features compared to the native NDI plugin for Unreal.
+
+### Configuration
+
+1. Find the `OWLNDISenderManager` Actor in the `Place Actors`panel and drag it into your scene.
+![NDI Actor](./images/ndisender.jpg)
+2. In `World Outliner` select `OWLNDISenderManager` so it opens in your `Details` panel, add a `NDI Sender` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its Members (there are 5). 
+![NDI Sender Array](./images/ndisenderarray.jpg)
+3. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured above or from another Unreal output.) 
+4. Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in `OBS`/ your `NDI` receiver programme.
+5. Select the `Video Conversion Format` you need. N.B. `BGRA` is required for alpha channel output.
+6. Click the `Active` box to begin sending to `NDI`.
+7. To stream multiple cameras, just add additional `Array Elements`.
+8. You can control the `Active` tick-box via `Blueprints` to manage which cameras are streaming from Unreal at any one time.
+
 
 ## Spout Receiver Manager
 
