@@ -13,6 +13,8 @@ The toolkit works both `in-Editor` and `at Runtime` and is compatible with both 
 2. The `OWL Capture` component which can be attached to any Unreal Camera or Cinecam to deliver the same output and capabilities as the `OWL Cinecam`.
 3. The `Spout Sender Manager` which allows you to output any Unreal `Render Target` to [`Spout`](https://spout.zeal.co/) (including from `Composure` and Unreal's `Virtual Camera`).
 4. The `Spout Receiver Manager` which allows you to input any [`Spout`](https://spout.zeal.co/) video feed into Unreal as a `Render Target` including to `Composure` or as a `Material` etc.
+5. The `NDI Sender Manager` which allows you to output any Unreal `Render Target` to `NDI`(including from `Composure` and Unreal's `Virtual Camera`).
+6. The `NDI Receiver Manager` which allows you to input any `NDI` video feed into Unreal as a `Render Target` including to `Composure` or as a `Material` etc.
 
 
 
@@ -144,10 +146,10 @@ and a `Spout Sender Manager` which is sending the `Render Target` to Spout.
 
 ### Overview
 
-- The `NDI Sender Manager` is an Unreal Actor that you use to manager different real-time `NDI` video outputs from Unreal.
+- The `NDI Sender Manager` is an Unreal Actor that you use to manage different real-time `NDI` video and audio outputs from Unreal.
 - Outputs are managed as `Render Targets` in the same way as the `Spout Sender Manager`.
 - It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
-- It also works with alpha outputs, with DLSS, custom resolutions and variable framerates and so has additional features compared to the native NDI plugin for Unreal.
+- It also works with audio, alpha outputs, with DLSS, custom resolutions and variable framerates and so has additional features compared to the native NDI plugin for Unreal.
 
 ### Configuration
 
@@ -158,9 +160,10 @@ and a `Spout Sender Manager` which is sending the `Render Target` to Spout.
 3. Select/ create a `Render Target` by clicking the drop down (this can be from your `OWL Cinecam` as configured above or from another Unreal output.) 
 4. Name your `Sender` and `Standalone Sender` as this is what your video feeds will be called in `OBS`/ your `NDI` receiver programme.
 5. Select the `Video Conversion Format` you need. N.B. `BGRA` is required for alpha channel output.
-6. Click the `Active` box to begin sending to `NDI`.
-7. To stream multiple cameras, just add additional `Array Elements`.
-8. You can control the `Active` tick-box via `Blueprints` to manage which cameras are streaming from Unreal at any one time.
+6. Select `Capture Audio` if you want to send audio alongside the video feed. This will capture your viewport audio.
+7. Click the `Active` box to begin sending to `NDI`.
+8. To stream multiple cameras, just add additional `Array Elements`.
+9. You can control the `Active` tick-box via `Blueprints` to manage which cameras are streaming from Unreal at any one time.
 
 
 ## Spout Receiver Manager
@@ -185,6 +188,41 @@ and a `Spout Sender Manager` which is sending the `Render Target` to Spout.
 7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
 8. To add your `Spout` video feed to your level, just drag-and-drop your `Render Target`from your `Content Browser` to any asset in your scene.
 ![Spout Receiver Details Panel](./images/receivermaterial.jpg)
+
+## NDI Receiver Manager
+
+### Overview
+
+- The `NDI Receiver Manager` is an Unreal Actor that you use to manage different real-time `NDI` video inputs to Unreal. 
+- Inputs are managed as `Render Targets` in the same way as the `NDI Sender Manager`
+- You need to create a `Material` from your `Render Target` to add the video input to `Actors` in your scene (explained below).
+- It works both `in-Editor` and `at-Runtime` and can be controlled through `Blueprints`.
+
+### Configuration
+
+1. Find the `OWLNDIReceiverManager` Actor in the `Place Actors` panel and drag it into your scene.  
+![NDI Receiver Manager](images/ndireceiver.jpg "image_tooltip")
+2. In `World Outliner` select `OWLNDIReceiverManager` so it opens in your `Details` panel, add a `NDI Receiver` `Array Element` and click the arrow in the right hand corner to open the `Array Element` showing its Members (there are 3). 
+![ Receiver Details Panel](./images/ndireceiverarray.jpg)
+3. Create a `Render Target` and give it a name.
+4. Select a `NDI` input feed from the list of options in the `Name` dropdown (any active Spout source will show).
+5. Click `Active` to start capturing the `NDI` source to your `Render Target`.
+6. To receive multiple input feeds, just add additional `Array Elements`.
+7. You can control the `Active` tick-box via `Blueprints` to manage which cameras are rendering simultaneously and so reduce computational load.
+8. To add your `NDI` video feed to your level, just drag-and-drop your `Render Target`from your `Content Browser` to any asset in your scene.
+![ Receiver Details Panel](./images/ndireceivermaterial.jpg)
+
+## Receving Alpha Video Feeds
+
+- Both the `Spout` and `NDI` Receiver Managers can receive alpha video feeds via this simple method:
+
+1. Double click on the material you have created from your Receiver Render Target: 
+![ Receiver Material Panel](./images/receiveralphamaterial.jpg)
+2. In the `Material` box in the `Details` panel select 'Blend Mode'>'Alpha Composite':
+![ Receiver Material Panel](./images/alphablendmode.jpg)
+3. In the Material blueprint connect the 'Alpha' node to the 'Opacity' node:
+![ Receiver Material Panel](./images/alphaopacity.jpg)
+4. Now your Render Target will show the alpha feed correctly.
 
 ## OWL Cinecam
 
